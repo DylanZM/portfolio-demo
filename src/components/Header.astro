@@ -2,26 +2,20 @@
 import ThemeToggle from './ThemeToggle.astro';
 ---
 
-
-
-
 <nav class="flex items-center justify-between w-full max-w-4xl px-4 py-6 mx-auto text-white md:px-0">
   <a href="/" class="text-lg font-bold tracking-wide text-white md:text-xl">Dylan Zm</a>
   <ul class="hidden items-center space-x-6 text-sm font-medium tracking-wide md:flex">
     <li>
-      <a href="/" class="transition-colors duration-200 hover:text-primary">Home</a>
+      <a href="/" class="relative transition-colors duration-200 after:content-[''] after:absolute after:left-0 after:top-full after:mt-1 after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full">Home</a>
     </li>
     <li>
-      <a href="/about" class="transition-colors duration-200 hover:text-primary">About</a>
+      <a href="/about" class="relative transition-colors duration-200 after:content-[''] after:absolute after:left-0 after:top-full after:mt-1 after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full">About</a>
     </li>
     <li>
-      <a href="/projects" class="transition-colors duration-200 hover:text-primary">Projects</a>
+      <a href="/projects" class="relative transition-colors duration-200 after:content-[''] after:absolute after:left-0 after:top-full after:mt-1 after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full">Projects</a>
     </li>
     <li>
-      <a href="/contact" class="transition-colors duration-200 hover:text-primary">Contact</a>
-    </li>
-    <li>
-      <ThemeToggle />
+      <a href="/contact" class="relative transition-colors duration-200 after:content-[''] after:absolute after:left-0 after:top-full after:mt-1 after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full">Contact</a>
     </li>
   </ul>
 </nav>
