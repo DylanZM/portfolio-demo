@@ -15,6 +15,6 @@ import { Sun } from "lucide";
   btn.addEventListener("click", () => {
     const dark = document.documentElement.classList.toggle("dark");
     icon.icon = dark ? Moon : Sun;
-    localStorage.setItem("theme", dark ? "dark" : "light");
+    localStorage.setItem("theme", dark ? "light" : "dark");
   });
 </script>
