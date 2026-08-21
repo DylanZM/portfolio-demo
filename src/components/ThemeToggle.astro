@@ -1,0 +1,20 @@
+---
+import MorphIcon from "morphicons/astro";
+import { Sun } from "lucide";
+---
+
+<button id="theme-toggle" type="button" aria-label="Toggle theme">
+  <MorphIcon icon={Sun} />
+</button>
+
+<script>
+  import { Sun, Moon } from "lucide";
+  import type { MorphIconElement } from "morphicons/element";
+  const btn = document.querySelector<HTMLButtonElement>("#theme-toggle")!;
+  const icon = btn.querySelector<MorphIconElement>("morph-icon")!;
+  btn.addEventListener("click", () => {
+    const dark = document.documentElement.classList.toggle("dark");
+    icon.icon = dark ? Moon : Sun;
+    localStorage.setItem("theme", dark ? "dark" : "light");
+  });
+</script>
