@@ -20,5 +20,56 @@ import '../styles/global.css';
 	</head>
 	<body>
 		<slot />
+		<script is:inline>
+			// Ensure body has top padding equal to header height to avoid overlap
+			function ensureBodyPaddingForHeader() {
+				const header = document.querySelector('header');
+				if (!header) return;
+				const setPadding = () => {
+					const h = header.getBoundingClientRect().height;
+					document.body.style.paddingTop = h + 'px';
+				};
+				setPadding();
+				window.addEventListener('resize', setPadding);
+				if ('ResizeObserver' in window) {
+					const ro = new ResizeObserver(setPadding);
+					ro.observe(header);
+				}
+			}
+			document.addEventListener('DOMContentLoaded', ensureBodyPaddingForHeader);
+
+			
+			function googleTranslateElementInit() {
+				new google.translate.TranslateElement({
+					pageLanguage: 'en',
+					includedLanguages: 'en,es',
+					layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+					autoDisplay: false
+				}, 'google_translate_element');
+			}
+
+			function waitForGoogleTranslate(callback, maxAttempts = 50) {
+				let attempts = 0;
+				const interval = setInterval(() => {
+					const select = document.querySelector('.goog-te-combo');
+					if (select || attempts >= maxAttempts) {
+						clearInterval(interval);
+						callback(select);
+					}
+					attempts++;
+				}, 100);
+			}
+
+			function translateTo(lang) {
+				waitForGoogleTranslate((select) => {
+					if (select) {
+						select.value = lang;
+						select.dispatchEvent(new Event('change'));
+					}
+				});
+			}
+		</script>
+		<div id="google_translate_element" style="display:none;"></div>
+		<script is:inline src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 	</body>
 </html>
