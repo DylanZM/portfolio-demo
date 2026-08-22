@@ -18,25 +18,21 @@ import '../styles/global.css';
 			}
 		</script>
 	</head>
-	<body>
+	<body style="padding-top: 80px;">
 		<slot />
 		<script is:inline>
-			// Ensure body has top padding equal to header height to avoid overlap
-			function ensureBodyPaddingForHeader() {
+			function updateBodyPadding() {
 				const header = document.querySelector('header');
 				if (!header) return;
-				const setPadding = () => {
-					const h = header.getBoundingClientRect().height;
-					document.body.style.paddingTop = h + 'px';
-				};
-				setPadding();
-				window.addEventListener('resize', setPadding);
-				if ('ResizeObserver' in window) {
-					const ro = new ResizeObserver(setPadding);
-					ro.observe(header);
-				}
+				const h = header.getBoundingClientRect().height;
+				document.body.style.paddingTop = h + 'px';
 			}
-			document.addEventListener('DOMContentLoaded', ensureBodyPaddingForHeader);
+			updateBodyPadding();
+			window.addEventListener('resize', updateBodyPadding);
+			if ('ResizeObserver' in window) {
+				const ro = new ResizeObserver(updateBodyPadding);
+				ro.observe(document.querySelector('header'));
+			}
 
 			
 			function googleTranslateElementInit() {
