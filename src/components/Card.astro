@@ -1,0 +1,21 @@
+---
+const { img = "https://placehold.co/600x400/1a1d21/abb2bf?text=Project", alt = "Project", title, description, tags = [], github = "#", demo = "#" } = Astro.props;
+---
+
+<div class="flex flex-col reveal-child  border border-gray">
+  <img src={img} alt={alt} class="w-full h-40 object-cover" />
+  <div class="flex flex-wrap justify-start gap-2 px-4 py-2" style="background: var(--surface);">
+    {tags.map((tag: string) => (
+      <span class="text-[10px] text-gray font-medium  tracking-wider px-2 py-0.5" style="background: color-mix(in srgb, var(--gray) 20%, var(--primary) 10%);">{tag}</span>
+    ))}
+  </div>
+  <div class="w-full h-px" style="background: var(--border);"></div>
+  <div class="flex flex-col gap-3 p-4 rounded-b-lg" style="background: var(--surface);">
+    <h3 class="text-lg font-bold">{title}</h3>
+    <p class="text-xs md:text-sm" style="color: var(--secondary)">{description}</p>
+    <div class="flex gap-3 mt-auto">
+      <a href={github} target="_blank" class="text-xs font-medium py-1 px-3 border border-primary transition-colors duration-200 hover:bg-primary hover:text-white btn-press">GitHub</a>
+      <a href={demo} target="_blank" class="text-xs font-medium py-1 px-3 border transition-colors duration-200 hover:bg-primary hover:text-white btn-press" style="border-color: var(--border); color: var(--secondary);">Demo</a>
+    </div>
+  </div>
+</div>
