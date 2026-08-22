@@ -2,22 +2,16 @@
 import ProyectIcon from './icons/proyect.astro';
 import Arrow from './icons/Arrow.astro';
 import Card from './Card.astro';
+import GitHubIcon from "./icons/GitHub.astro";
 
-const astroIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`;
-const tailwindIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M12 12a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M12 18a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>`;
-const reactIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(0 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>`;
-const nodeIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`;
-const mongoIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2"/><path d="M12 6v6l4 2"/></svg>`;
-const vueIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h4l4 8-4 8H4l4-8-4-8z"/><path d="M12 4h4l4 8-4 8h-4l4-8-4-8z"/></svg>`;
-const firebaseIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l-2 14h4L12 2z"/><path d="M5 12l7 10 7-10"/></svg>`;
 ---
 
-<section id="projects" class="w-full py-16 px-6 md:px-0 md:max-w-4xl md:mx-auto scroll-mt-24 reveal">
-  <div class="flex flex-col gap-2 mb-10 text-center md:text-left">
+<section id="projects" class="w-full py-16 px-6 sm:px-8 md:px-0 md:max-w-4xl md:mx-auto scroll-mt-24 reveal">
+  <div class="flex flex-col gap-2 mb-10 text-left">
     <h2 class="flex flex-wrap items-center gap-3 text-[1.5rem] md:text-[2rem] tracking-wide font-medium">
       <ProyectIcon />
       projects
-      <div class="hidden md:block border-t border-primary line-draw"></div>
+      <div class="border-t border-primary line-draw"></div>
       <a href="#projects" class="ml-auto flex items-center gap-2 text-xs font-medium whitespace-nowrap" style="color: var(--secondary);">
         View all
       <Arrow />
@@ -34,9 +28,10 @@ const firebaseIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height=
       alt="Portfolio"
       title="Portfolio"
       description="My personal portfolio made with Astro and Tailwind CSS."
+      github="https://github.com/DylanZM/portfolio"
       tags={[
-        { name: "Astro", icon: astroIcon },
-        { name: "Tailwind CSS", icon: tailwindIcon }
+        { name: "Astro", icon: "astro" },
+        { name: "Tailwind CSS", icon: "tailwind" }
       ]}
     />
     <Card
@@ -44,20 +39,23 @@ const firebaseIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height=
       alt="E-Commerce"
       title="E-Commerce"
       description="Online store with shopping cart and payment gateway."
+      github="https://github.com/DylanZM/e-commerce"
       tags={[
-        { name: "React", icon: reactIcon },
-        { name: "Node.js", icon: nodeIcon },
-        { name: "MongoDB", icon: mongoIcon }
+        { name: "React", icon: "react" },
+        { name: "Node.js", icon: "node" },
+        { name: "MongoDB", icon: "mongo" }
       ]}
     />
     <Card
-      img="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop"
+      img="/src/assets/proyects/task-manager.png"
       alt="Task Manager"
       title="Task Manager"
       description="Task management application with user authentication."
+      github="https://github.com/DylanZM/task-manager"
+      demo="https://task-manager-sigma-pied-92.vercel.app/login"
       tags={[
-        { name: "Vue.js", icon: vueIcon },
-        { name: "Firebase", icon: firebaseIcon }
+        { name: "Next.js", icon: "nextjs" },
+        { name: "Tailwind CSS", icon: "tailwind" }
       ]}
     />
   </div>

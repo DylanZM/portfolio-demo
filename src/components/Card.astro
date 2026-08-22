@@ -1,5 +1,9 @@
 ---
-const { img = "https://placehold.co/600x400/1a1d21/abb2bf?text=Project", alt = "Project", title, description, tags = [], github = "#", demo = "#" } = Astro.props;
+import GitHubIcon from "./icons/GitHub.astro";
+import TechIcon from './icons/Technologies.astro';
+import Button from './Button.astro';
+
+const { img = "", alt = "Project", title, description, tags = [], github = "#", demo = "#" } = Astro.props;
 ---
 
 <div class="flex flex-col reveal-child border border-gray">
@@ -7,7 +11,7 @@ const { img = "https://placehold.co/600x400/1a1d21/abb2bf?text=Project", alt = "
   <div class="flex flex-wrap justify-start gap-1.5 pl-3 pr-4 py-2" style="background: var(--surface);">
     {tags.map((tag: { name: string; icon: string }) => (
       <span class="inline-flex items-center gap-1 text-[10px] text-gray font-medium tracking-wider px-2 py-0.5 border border-gray" style="background: color-mix(in srgb, var(--gray) 20%, var(--primary) 10%);">
-        <Fragment set:html={tag.icon} />
+        <TechIcon name={tag.icon} />
         {tag.name}
       </span>
     ))}
@@ -17,8 +21,11 @@ const { img = "https://placehold.co/600x400/1a1d21/abb2bf?text=Project", alt = "
     <h3 class="text-lg font-bold">{title}</h3>
     <p class="text-xs md:text-sm" style="color: var(--secondary)">{description}</p>
     <div class="flex gap-3 mt-auto">
-      <a href={github} target="_blank" class="text-xs font-medium py-1 px-3 border border-primary transition-colors duration-200 hover:bg-primary hover:text-white btn-press">GitHub</a>
-      <a href={demo} target="_blank" class="text-xs font-medium py-1 px-3 border transition-colors duration-200 hover:bg-primary hover:text-white btn-press" style="border-color: var(--border); color: var(--secondary);">Demo</a>
+      <Button href={github} target="_blank">
+        <GitHubIcon width={16} height={16}/>
+        GitHub
+      </Button>
+      <Button href={demo} target="_blank" class="border-gray" style="color: var(--secondary);">Demo</Button>
     </div>
   </div>
 </div>

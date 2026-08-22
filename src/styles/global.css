@@ -13,7 +13,7 @@
 }
 
 :root {
-  --bg: #0b0d0e;
+  --bg: #0b0d0e; 
   --text: #ffffff;
   --secondary: #abb2bf;
   --surface: #141618;
@@ -79,11 +79,20 @@ body {
 /* Line draw animation */
 .line-draw {
   width: 0;
-  transition: width 1s var(--ease-out) 0.3s;
+  transition: width 1.8s var(--ease-out) 0.3s;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .visible .line-draw {
-  width: 511px;
+  width: 100%;
+  max-width: 150px;
+}
+
+@media (min-width: 768px) {
+  .visible .line-draw {
+    max-width: 511px;
+  }
 }
 
 /* Button press micro-interaction */
