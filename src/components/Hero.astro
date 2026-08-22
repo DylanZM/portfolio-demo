@@ -22,10 +22,45 @@ import Button from "./Button.astro";
   </div>
   <div class="flex flex-col items-start gap-2 mt-4 md:mt-0 md:w-1/2 md:items-center md:pl-15">
     <div class="relative">
-      <img src="/src/assets/profile.png" alt="DylanZM" class="w-44 h-44 object-cover sm:w-56 sm:h-56 md:w-80 md:h-80 float-anim" />
+      <img id="hero-gif" src="/src/assets/bloub-first-cicleF.gif" alt="DylanZM" class="w-44 h-44 object-cover sm:w-56 sm:h-56 md:w-80 md:h-80" style="transform: scaleX(-1) translate(0px, 0px); transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);" />
     </div>
     <Button class="border-gray w-[230px] sm:w-[250px] md:w-[290px] font-medium leading-tight text-xs sm:text-sm">
       Currently working on <span class="font-semibold">Portfolio</span>
     </Button>
   </div>
 </section>
+
+<script is:inline>
+  (function() {
+    const gif = document.getElementById('hero-gif');
+    if (!gif) return;
+
+    let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      const rect = gif.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      const diffX = e.clientX - centerX;
+      const diffY = e.clientY - centerY;
+
+      const maxMove = 20;
+      const distance = Math.sqrt(diffX * diffX + diffY * diffY);
+      const maxDist = 400;
+
+      const factor = Math.min(distance / maxDist, 1);
+      targetX = (diffX / (distance || 1)) * maxMove * factor;
+      targetY = (diffY / (distance || 1)) * maxMove * factor;
+    });
+
+    function animate() {
+      currentX += (targetX - currentX) * 0.08;
+      currentY += (targetY - currentY) * 0.08;
+
+      gif.style.transform = `scaleX(-1) translate(${currentX}px, ${currentY}px)`;
+      requestAnimationFrame(animate);
+    }
+    animate();
+  })();
+</script>
