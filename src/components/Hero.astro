@@ -1,34 +1,31 @@
 ---
-
+import Button from "./Button.astro";
 ---
 
-<section
-  class="flex flex-col items-center justify-center w-full min-h-[calc(100vh-100px)] -mt-2 gap-8 px-4 pt-0 md:flex-row md:max-w-4xl md:mx-auto md:gap-16 md:-mt-4"
->
-  <div class="flex flex-col gap-4 text-center md:text-left md:w-1/2">
-    <h1 class="text-4xl font-semibold md:text-4xl">
-      Hi, I'm <span class="text-primary"
-        >Dylan <h2 class="text-lg font-semibold whitespace-nowrap md:text-2xl">
-          <span class="text-primary">Frontend Developer</span> and <span
-            class="text-primary">Web Developer</span
-          >
-        </h2>
-      </span>
+<section class="flex flex-col items-start justify-center w-full py-8 gap-6 px-6 sm:px-8 md:flex-row md:max-w-4xl md:mx-auto md:items-center md:gap-16 md:min-h-[calc(100vh-80px)] md:py-0">
+  <div class="flex flex-col items-start gap-3 text-left md:w-1/2">
+    <h1 class="text-2xl font-bold tracking-wide whitespace-nowrap sm:text-3xl md:text-5xl">
+      Hi, I'm <span class="text-primary">Dylan</span>
     </h1>
-
-    <p
-      class="max-w-md text-xs md:text-sm font-regular text-gray"
-
-    >
-      I'm a passionate developer with a passion for creating beautiful and
-      functional web applications.
+    <h2 class="text-base font-semibold whitespace-nowrap sm:text-xl md:text-2xl">
+      <span class="text-primary">Frontend Developer</span> and <span class="text-primary">Web Developer</span>
+    </h2>
+    <p class="max-w-sm text-sm leading-relaxed sm:max-w-md sm:text-base md:text-lg" style="color: var(--secondary)">
+      I'm a passionate developer with a passion for creating
+      beautiful and functional web applications.
     </p>
+    <div class="mt-2">
+      <Button>
+      Contact Me!!
+    </Button>
+    </div>
   </div>
-  <div class="md:w-1/2 flex justify-center md:justify-end md:pl-8">
-    <img
-      src="/public/profile.png"
-      alt="DylanZM"
-      class="w-64 h-64 object-cover rounded-full md:w-80 md:h-80"
-    />
+  <div class="flex flex-col items-start gap-2 mt-4 md:mt-0 md:w-1/2 md:items-center md:pl-15">
+    <div class="relative">
+      <img src="/src/assets/profile.png" alt="DylanZM" class="w-44 h-44 object-cover sm:w-56 sm:h-56 md:w-80 md:h-80" />
+    </div>
+    <Button class="border-gray text-gray w-[230px] sm:w-[250px] md:w-[290px] font-medium leading-tight text-xs sm:text-sm dark:text-lightsecondary">
+      Currently working on <span class="font-semibold">Portfolio</span>
+    </Button>
   </div>
 </section>
