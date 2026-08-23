@@ -24,7 +24,7 @@ const {
     {
       tags.map((tag: { name: string; icon: string }) => (
         <span
-          class="inline-flex items-center gap-1 text-[10px] text-gray font-medium tracking-wider px-2 py-0.5 border border-gray"
+          class="inline-flex items-center gap-1 text-[10px] font-medium text-gray tracking-wider px-2 py-0.5 border border-gray"
           style="background: color-mix(in srgb, var(--gray) 20%, var(--primary) 10%);"
         >
           <TechIcon name={tag.icon} />
@@ -38,7 +38,7 @@ const {
     class="flex flex-col gap-3 p-4 rounded-b-lg"
     style="background: var(--surface);"
   >
-    <h3 class="text-lg font-bold">{title}</h3>
+    <h3 class="text-lg font-medium">{title}</h3>
     <p class="text-xs md:text-sm" style="color: var(--secondary)">
       {description}
     </p>
