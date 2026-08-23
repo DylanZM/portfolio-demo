@@ -207,6 +207,46 @@ header {
   transform: translateX(4px);
 }
 
+/* Header side rail: line draws down, icons cascade in */
+.rail-line {
+  transform-origin: top;
+  animation: railLineDraw 0.9s var(--ease-in-out) 0.2s both;
+}
+
+@keyframes railLineDraw {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+.rail-item {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: railItemIn 0.5s var(--ease-out) forwards;
+}
+
+.rail-item.d1 { animation-delay: 0.5s; }
+.rail-item.d2 { animation-delay: 0.65s; }
+.rail-item.d3 { animation-delay: 0.8s; }
+
+@keyframes railItemIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rail-item svg,
+.rail-item morph-icon {
+  transition: transform 180ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .rail-item:hover svg,
+  .rail-item:hover morph-icon {
+    transform: translateY(-2px);
+  }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
@@ -223,6 +263,15 @@ header {
     transition: none;
   }
   .float-anim {
+    animation: none;
+  }
+  .rail-line {
+    animation: none;
+    transform: none;
+  }
+  .rail-item {
+    opacity: 1;
+    transform: none;
     animation: none;
   }
 }
