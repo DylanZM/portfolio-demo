@@ -77,7 +77,11 @@ import { skills as categories } from '../data/skills';
   }
 
   .skill-tag {
-    transition: transform 160ms var(--ease-out), border-color 200ms ease, color 200ms ease;
+    transition: border-color 200ms ease;
+  }
+
+  .skill-tag :global(svg) {
+    transition: transform 180ms var(--ease-out);
   }
 
   :global(html.dark) .deco-float :global(svg) {
@@ -86,9 +90,11 @@ import { skills as categories } from '../data/skills';
 
   @media (hover: hover) and (pointer: fine) {
     .skill-tag:hover {
-      transform: translateY(-2px);
       border-color: var(--primary);
-      color: var(--primary);
+    }
+
+    .skill-tag:hover :global(svg) {
+      transform: scale(1.15);
     }
   }
 </style>
