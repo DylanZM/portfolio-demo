@@ -6,25 +6,8 @@ import Frame28 from '../assets/decorations/Frame28.svg';
 import Frame29 from '../assets/decorations/Frame29.svg';
 import Rectangle23 from '../assets/decorations/Rectangle 23.svg';
 import Rectangle24 from '../assets/decorations/Rectangle 24.svg';
-
-const categories = [
-  {
-    name: "Frontend",
-    skills: ["React", "Next.js", "Astro", "Tailwind CSS"]
-  },
-  {
-    name: "Backend",
-    skills: ["Go", "Node.js", "PostgreSQL", "REST APIs"]
-  },
-  {
-    name: "Tools",
-    skills: ["Git", "Docker", "Linux", "VS Code"]
-  },
-  {
-    name: "Learning",
-    skills: ["Rust", "Three.js", "GSAP", "WebGL"]
-  }
-];
+import TechIcon from './icons/Technologies.astro';
+import { skills as categories } from '../data/skills';
 ---
 
 <section id="skills" class="w-full py-16 px-6 sm:px-8 md:px-0 md:max-w-4xl md:mx-auto scroll-mt-24 reveal">
@@ -63,8 +46,13 @@ const categories = [
           <h3 class="text-sm font-semibold tracking-wider uppercase mb-3" style="color: var(--primary);">{cat.name}</h3>
           <div class="flex flex-wrap gap-2">
             {cat.skills.map((skill) => (
-              <span class="skill-tag text-xs font-medium px-3 py-1.5 border border-secondary" style="background: var(--surface);">
-                {skill}
+              <span
+                class="skill-tag inline-flex items-center justify-center w-9 h-9 border border-secondary"
+                style="background: var(--surface);"
+                title={skill.name}
+                aria-label={skill.name}
+              >
+                <TechIcon name={skill.icon} />
               </span>
             ))}
           </div>

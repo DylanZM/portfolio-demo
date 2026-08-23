@@ -1,22 +1,48 @@
 export const skills = [
   {
     name: "Frontend",
-    icon: "html",
-    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Astro", "Tailwind", "Vite"]
+    icon: "react",
+    skills: [
+      { name: "HTML", icon: "html" },
+      { name: "CSS", icon: "css" },
+      { name: "JavaScript", icon: "javascript" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "React", icon: "react" },
+      { name: "Astro", icon: "astro" },
+      { name: "Tailwind", icon: "tailwind" },
+      { name: "Vite", icon: "vite" },
+      { name: "Nextjs", icon: "nextjs" }
+    ]
   },
   {
     name: "Backend",
     icon: "nodejs",
-    skills: ["Python", "Node.js", "Go", "PostgreSQL", "REST"]
+    skills: [
+      { name: "Python", icon: "python" },
+      { name: "Node.js", icon: "nodejs" },
+      { name: "Go", icon: "go" },
+      { name: "PostgreSQL", icon: "postgresql" },
+      { name: "REST", icon: "rest" }
+    ]
   },
   {
     name: "Tools",
     icon: "git",
-    skills: ["Git", "Docker", "Linux", "VS Code"]
+    skills: [
+      { name: "Git", icon: "git" },
+      { name: "Docker", icon: "docker" },
+      { name: "Linux", icon: "linux" },
+      { name: "VS Code", icon: "vscode" }
+    ]
   },
   {
     name: "Learning",
     icon: "rust",
-    skills: ["Rust", "Three.js", "GSAP", "WebGL"]
+    skills: [
+      { name: "Rust", icon: "rust" },
+      { name: "Three.js", icon: "threejs" },
+      { name: "GSAP", icon: "gsap" },
+      { name: "WebGL", icon: "webgl" }
+    ]
   }
 ];
