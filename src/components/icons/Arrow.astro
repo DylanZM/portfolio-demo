@@ -1,8 +1,12 @@
+---
+const { width = 30, height = 30 } = Astro.props;
+---
+
 <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 250 100"
-  width="30"
-  height="30"
+  {width}
+  {height}
   fill="none"
   stroke="currentColor"
   stroke-width="12"

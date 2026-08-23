@@ -1,43 +1,72 @@
 ---
 import Button from "./Button.astro";
+import { MapPin } from "@lucide/astro";
 ---
 
-<section class="flex flex-col items-start justify-center w-full py-8 gap-6 px-6 sm:px-8 md:flex-row md:max-w-4xl md:mx-auto md:items-center md:gap-16 md:min-h-[calc(100vh-80px)] md:py-0">
+<section
+  class="flex flex-col items-start justify-center w-full py-8 gap-6 px-6 sm:px-8 md:flex-row md:max-w-4xl md:mx-auto md:items-center md:gap-16 md:min-h-[calc(100vh-80px)] md:py-0"
+>
   <div class="flex flex-col items-start gap-3 text-left md:w-1/2 hero-stagger">
-    <h1 class="text-2xl font-bold tracking-wide whitespace-nowrap sm:text-3xl md:text-4xl">
+    <h1
+      class="text-2xl font-bold tracking-wide whitespace-nowrap sm:text-3xl md:text-4xl"
+    >
       Hi, I'm <span class="text-primary">Dylan</span>
     </h1>
-    <h2 class="text-base font-semibold whitespace-nowrap sm:text-xl md:text-2xl">
-      <span class="text-primary">Frontend Developer</span> and <span class="text-primary">Web Developer</span>
+    <h2
+      class="text-base font-semibold whitespace-nowrap sm:text-xl md:text-2xl"
+    >
+      <span class="text-primary">Frontend Developer</span> and <span
+        class="text-primary">Web Developer</span
+      >
     </h2>
-    <p class="max-w-sm text-sm leading-relaxed sm:max-w-md sm:text-base md:text-lg" style="color: var(--secondary)">
-      I'm a passionate developer with a passion for creating
-      beautiful and functional web applications.
+    <div class="flex items-center gap-1.5">
+      <MapPin class="w-4 h-4 text-primary" />
+      <span style="color: var(--secondary);" class="text-sm font-medium"
+        >Dominican Republic 🇩🇴</span
+      >
+    </div>
+    <p
+      class="max-w-sm text-sm leading-relaxed sm:max-w-md sm:text-base md:text-lg"
+      style="color: var(--secondary)"
+    >
+      I'm a passionate developer with a passion for creating beautiful and
+      functional web applications.
     </p>
     <div class="mt-2">
-      <Button>
-      Contact Me!!
-    </Button>
+      <Button> Contact Me!! </Button>
     </div>
   </div>
-  <div class="flex flex-col items-start gap-2 mt-4 md:mt-0 md:w-1/2 md:items-center md:pl-15">
+  <div
+    class="flex flex-col items-start gap-2 mt-4 md:mt-0 md:w-1/2 md:items-center md:pl-15"
+  >
     <div class="relative">
-      <img id="hero-gif" src="/src/assets/bloub-first-cicleF.gif" alt="DylanZM" class="w-44 h-44 object-cover sm:w-56 sm:h-56 md:w-80 md:h-80" style="transform: scaleX(-1) translate(0px, 0px); transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);" />
+      <img
+        id="hero-gif"
+        src="/src/assets/bloub-first-cicleF.gif"
+        alt="DylanZM"
+        class="w-44 h-44 object-cover sm:w-56 sm:h-56 md:w-80 md:h-80"
+        style="transform: scaleX(-1) translate(0px, 0px); transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);"
+      />
     </div>
-    <Button class="border-secondary w-[230px] sm:w-[250px] md:w-[290px] font-medium leading-tight text-xs sm:text-sm">
+    <Button
+      class="border-secondary w-[230px] sm:w-[250px] md:w-[290px] font-medium leading-tight text-xs sm:text-sm"
+    >
       Currently working on <span class="font-semibold">Portfolio</span>
     </Button>
   </div>
 </section>
 
 <script is:inline>
-  (function() {
-    const gif = document.getElementById('hero-gif');
+  (function () {
+    const gif = document.getElementById("hero-gif");
     if (!gif) return;
 
-    let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+    let targetX = 0,
+      targetY = 0,
+      currentX = 0,
+      currentY = 0;
 
-    document.addEventListener('mousemove', (e) => {
+    document.addEventListener("mousemove", (e) => {
       const rect = gif.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;

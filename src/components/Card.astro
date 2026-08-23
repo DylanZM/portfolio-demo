@@ -49,15 +49,17 @@ const {
         <GitHubIcon width={16} height={16} />
         GitHub
       </Button>
-      <Button
-        href={demo}
-        target="_blank"
-        border="border-primary"
-        style="color: var(--secondary);"
-      >
-        <ChevronsLeftRightEllipsis width={16} height={16} />
-        Preview
-      </Button>
+      {demo && demo !== "#" && (
+        <Button
+          href={demo}
+          target="_blank"
+          border="border-primary"
+          style="color: var(--secondary);"
+        >
+          <ChevronsLeftRightEllipsis width={16} height={16} />
+          Preview
+        </Button>
+      )}
     </div>
   </div>
 </div>
