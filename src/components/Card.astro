@@ -15,7 +15,7 @@ const {
 } = Astro.props;
 ---
 
-<div class="flex flex-col reveal-child border border-gray" style="background: var(--surface);">
+<div class="flex flex-col reveal-child border border-secondary" style="background: var(--surface);">
   <img src={img} alt={alt} class="w-full h-40 object-cover" />
   <div
     class="flex flex-wrap justify-start gap-1.5 pl-3 pr-4 py-2"
@@ -24,8 +24,8 @@ const {
     {
       tags.map((tag: { name: string; icon: string }) => (
         <span
-          class="inline-flex items-center gap-1 text-[10px] font-medium text-gray tracking-wider px-2 py-0.5 border border-gray"
-          style="background: color-mix(in srgb, var(--gray) 20%, var(--primary) 10%);"
+          class="inline-flex items-center gap-1 text-[10px] font-medium tracking-wider px-2 py-0.5 border border-secondary"
+          style="background: color-mix(in srgb, var(--gray) 20%, var(--secondary) 10%); color: var(--secondary);"
         >
           <TechIcon name={tag.icon} />
           {tag.name}
@@ -33,7 +33,7 @@ const {
       ))
     }
   </div>
-  <div class="border-b border-gray" style="background: var(--secondary);"></div>
+  <div class="border-b border-secondary" style="background: var(--secondary);"></div>
   <div
     class="flex flex-col gap-3 p-4 rounded-b-lg"
     style="background: var(--surface);"
@@ -43,7 +43,7 @@ const {
       {description}
     </p>
     <div class="flex gap-3 mt-auto">
-      <Button href={github} target="_blank" border="border-gray">
+      <Button href={github} target="_blank" border="border-secondary">
         <GitHubIcon width={16} height={16} />
         GitHub
       </Button>
