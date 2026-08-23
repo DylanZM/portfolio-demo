@@ -40,14 +40,14 @@ import { skills as categories } from '../data/skills';
     </div>
 
     <!-- Skill categories -->
-    <div class="flex flex-col gap-8 flex-1 reveal-stagger ml-40">
+    <div class="flex flex-col gap-6 md:gap-8 flex-1 reveal-stagger md:ml-40">
       {categories.map((cat) => (
         <div class="reveal-child">
-          <h3 class="text-sm font-semibold tracking-wider uppercase mb-3" style="color: var(--primary);">{cat.name}</h3>
+          <h3 class="text-xs sm:text-sm font-semibold tracking-wider uppercase mb-3" style="color: var(--primary);">{cat.name}</h3>
           <div class="flex flex-wrap gap-2">
             {cat.skills.map((skill) => (
               <span
-                class="skill-tag inline-flex items-center justify-center w-9 h-9 border border-secondary"
+                class="skill-tag inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 border border-secondary"
                 style="background: var(--surface);"
                 title={skill.name}
                 aria-label={skill.name}
