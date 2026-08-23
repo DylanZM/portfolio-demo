@@ -66,9 +66,9 @@ header {
   transform: translateY(28px) scale(0.94);
   filter: blur(4px);
   transition:
-    opacity 0.5s var(--ease-out),
-    transform 0.5s var(--ease-out),
-    filter 0.5s var(--ease-out);
+    opacity 0.8s var(--ease-out),
+    transform 0.8s var(--ease-out),
+    filter 0.8s var(--ease-out);
 }
 
 .reveal-stagger.visible .reveal-child {
@@ -78,16 +78,16 @@ header {
 }
 
 .reveal-stagger.visible .reveal-child:nth-child(1) { transition-delay: 0ms; }
-.reveal-stagger.visible .reveal-child:nth-child(2) { transition-delay: 60ms; }
-.reveal-stagger.visible .reveal-child:nth-child(3) { transition-delay: 120ms; }
-.reveal-stagger.visible .reveal-child:nth-child(4) { transition-delay: 180ms; }
-.reveal-stagger.visible .reveal-child:nth-child(5) { transition-delay: 240ms; }
-.reveal-stagger.visible .reveal-child:nth-child(6) { transition-delay: 300ms; }
+.reveal-stagger.visible .reveal-child:nth-child(2) { transition-delay: 100ms; }
+.reveal-stagger.visible .reveal-child:nth-child(3) { transition-delay: 200ms; }
+.reveal-stagger.visible .reveal-child:nth-child(4) { transition-delay: 300ms; }
+.reveal-stagger.visible .reveal-child:nth-child(5) { transition-delay: 400ms; }
+.reveal-stagger.visible .reveal-child:nth-child(6) { transition-delay: 500ms; }
 
 /* Line draw animation */
 .line-draw {
   width: 0;
-  transition: width 1s var(--ease-out) 0.3s;
+  transition: width 1.4s var(--ease-out) 0.3s;
   flex-shrink: 1;
   min-width: 0;
 }
@@ -107,7 +107,7 @@ header {
 .projects-header .proyect-icon {
   opacity: 0;
   transform: scale(0.5) rotate(-20deg);
-  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
 }
 
 .visible .projects-header .proyect-icon {
@@ -118,7 +118,7 @@ header {
 .projects-header .view-all-link {
   opacity: 0;
   transform: translateX(12px);
-  transition: opacity 0.4s var(--ease-out) 0.5s, transform 0.4s var(--ease-out) 0.5s;
+  transition: opacity 0.6s var(--ease-out) 0.6s, transform 0.6s var(--ease-out) 0.6s;
 }
 
 .visible .projects-header .view-all-link {

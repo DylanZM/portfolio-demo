@@ -14,10 +14,10 @@ import { ChevronDown } from "lucide";
     <div class="absolute top-37 -left-30 -translate-x-1/2 flex flex-col items-center gap-4">
       <ThemeToggle class="text-secondary" />
       <a href="https://github.com/DylanZM" target="_blank" class="text-secondary hover:text-primary transition-colors duration-200">
-        <GitHubIcon/>
+        <GitHubIcon width={20} height={20} />
       </a>
       <a href="mailto:dylanzarzuela62@gmail.com" class="text-secondary hover:text-primary transition-colors duration-200">
-        <Mail />
+        <Mail width={20} height={20} />
       </a>
     </div>
 
@@ -42,7 +42,7 @@ import { ChevronDown } from "lucide";
       <li class="relative">
         <button id="lang-toggle" type="button" aria-label="Toggle language" aria-expanded="false" class="flex items-center gap-2 cursor-pointer">
           <span id="lang-label">EN</span>
-          <MorphIcon icon={ChevronDown} />
+          <MorphIcon icon={ChevronDown} size={20} />
         </button>
         <ul id="lang-dropdown" class="hidden absolute top-full right-0 mt-2 py-1 px-3 border border-secondary text-sm font-semibold" style="background: var(--surface);">
           <li><button class="lang-option cursor-pointer block w-full text-left py-1 hover:text-primary transition-colors" data-lang="en">EN</button></li>
