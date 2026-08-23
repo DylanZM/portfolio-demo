@@ -1,42 +1,55 @@
 ---
-import Arrow from './icons/Arrow.astro';
-import Frame27 from '../assets/decorations/Frame27.svg';
-import Frame29 from '../assets/decorations/Frame29.svg';
-import Rectangle23 from '../assets/decorations/Rectangle 23.svg';
-import Rectangle24 from '../assets/decorations/Rectangle 24.svg';
+import Frame27 from "../assets/decorations/Frame27.svg";
+import Frame29 from "../assets/decorations/Frame29.svg";
+import Rectangle23 from "../assets/decorations/Rectangle 23.svg";
+import Rectangle24 from "../assets/decorations/Rectangle 24.svg";
 
 const categories = [
   {
     name: "Frontend",
-    skills: ["React", "Next.js", "Astro", "Tailwind CSS"]
+    skills: ["React", "Next.js", "Astro", "Tailwind CSS"],
   },
   {
     name: "Backend",
-    skills: ["Go", "Node.js", "PostgreSQL", "REST APIs"]
+    skills: ["Go", "Node.js", "PostgreSQL", "REST APIs"],
   },
   {
     name: "Tools",
-    skills: ["Git", "Docker", "Linux", "VS Code"]
+    skills: ["Git", "Docker", "Linux", "VS Code"],
   },
   {
     name: "Learning",
-    skills: ["Rust", "Three.js", "GSAP", "WebGL"]
-  }
+    skills: ["Rust", "Three.js", "GSAP", "WebGL"],
+  },
 ];
 ---
 
-<section id="skills" class="w-full py-16 px-6 sm:px-8 md:px-0 md:max-w-4xl md:mx-auto scroll-mt-24 reveal">
+<section
+  id="skills"
+  class="w-full py-16 px-6 sm:px-8 md:px-0 md:max-w-4xl md:mx-auto scroll-mt-24 reveal"
+>
   <div class="flex flex-col gap-2 mb-10 text-left">
-    <h2 class="flex flex-wrap items-center gap-3 text-[1.5rem] md:text-[2rem] tracking-wide font-medium">
+    <h2
+      class="flex flex-wrap items-center gap-3 text-[1.5rem] md:text-[2rem] tracking-wide font-medium"
+    >
       <span class="inline-flex">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C778DD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#C778DD"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><path d="M12 20h9"></path><path
+            d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg
+        >
       </span>
       skills
-      <div class="border-t border-primary line-draw"></div>
-      <a href="#skills" class="view-all-link ml-auto flex items-center gap-2 text-xs font-medium whitespace-nowrap" style="color: var(--secondary);">
-        View all
-        <Arrow />
-      </a>
+      <div class="border-t border-primary line-draw" style="max-width: 239px;">
+      </div>
     </h2>
     <p class="text-sm md:text-base" style="color: var(--secondary)">
       Technologies and tools I work with.
@@ -44,28 +57,28 @@ const categories = [
   </div>
 
   <div class="flex flex-col md:flex-row md:gap-16">
-    <!-- Left: Decorations in 2x2 grid -->
-    <div class="hidden md:grid grid-cols-2 gap-6 md:w-1/3 md:place-content-center" aria-hidden="true">
-      <Frame27 class="deco-float opacity-30 justify-self-center" style="animation-delay: 0s;" />
-      <Frame29 class="deco-float opacity-20 justify-self-center" style="animation-delay: 0.8s;" />
-      <Rectangle24 class="deco-float opacity-15 justify-self-center" style="animation-delay: 1.6s;" />
-      <Rectangle23 class="deco-float opacity-20 justify-self-center" style="animation-delay: 2.4s;" />
+    <div class="deco-grid hidden md:grid grid-cols-2 gap-10 md:w-1/4 md:place-content-center" aria-hidden="true">
+      <Frame27 class="deco-float opacity-40 justify-self-center" style="animation-delay: 0s;" />
+      <Frame29 class="deco-float opacity-30 justify-self-center" style="animation-delay: 0.8s;" />
+      <Rectangle24 class="deco-float opacity-25 justify-self-center" style="animation-delay: 1.6s;" />
+      <Rectangle23 class="deco-float opacity-30 justify-self-center" style="animation-delay: 2.4s;" />
     </div>
 
-    <!-- Right: Skill categories -->
-    <div class="flex flex-col gap-8 md:w-2/3 reveal-stagger">
-      {categories.map((cat) => (
-        <div class="reveal-child">
-          <h3 class="text-sm font-semibold tracking-wider uppercase mb-3" style="color: var(--primary);">{cat.name}</h3>
-          <div class="flex flex-wrap gap-2">
-            {cat.skills.map((skill) => (
-              <span class="skill-tag text-xs font-medium px-3 py-1.5 border border-secondary" style="background: var(--surface);">
-                {skill}
-              </span>
-            ))}
+    <div class="flex flex-col gap-8 md:w-3/4 md:pl-50 reveal-stagger">
+      {
+        categories.map((cat) => (
+          <div class="reveal-child">
+            <h3 class="text-sm font-semibold tracking-wider uppercase mb-3" style="color: var(--primary);">{cat.name}</h3>
+            <div class="flex flex-wrap gap-2">
+              {cat.skills.map((skill) => (
+                <span class="skill-tag text-xs font-medium px-3 py-1.5 border border-secondary" style="background: var(--surface);">
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
@@ -76,7 +89,8 @@ const categories = [
   }
 
   @keyframes decoFloat {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0) rotate(0deg);
     }
     50% {
@@ -85,7 +99,14 @@ const categories = [
   }
 
   .skill-tag {
-    transition: transform 160ms var(--ease-out), border-color 200ms ease, color 200ms ease;
+    transition:
+      transform 160ms var(--ease-out),
+      border-color 200ms ease,
+      color 200ms ease;
+  }
+
+  :global(html.dark) .deco-grid :global(svg) {
+    filter: brightness(0.4) saturate(1.2);
   }
 
   @media (hover: hover) and (pointer: fine) {
