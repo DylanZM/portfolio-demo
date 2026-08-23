@@ -19,7 +19,9 @@ import '../styles/global.css';
 		</script>
 	</head>
 	<body style="padding-top: 80px;">
-		<slot />
+		<div class="relative">
+			<slot />
+		</div>
 		<script is:inline>
 			function updateBodyPadding() {
 				const header = document.querySelector('header');
