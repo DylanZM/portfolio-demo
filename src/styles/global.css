@@ -36,7 +36,10 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-fira);
-  transition: background 0.3s, color 0.3s;
+}
+
+header {
+  transition: background 0.01s;
 }
 
 /* Easing curves */
