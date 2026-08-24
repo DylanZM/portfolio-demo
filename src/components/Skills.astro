@@ -1,5 +1,4 @@
 ---
-import Arrow from './icons/Arrow.astro';
 import { CodeXml } from "@lucide/astro";
 import Frame27 from '../assets/decorations/Frame27.svg';
 import Frame28 from '../assets/decorations/Frame28.svg';
@@ -8,6 +7,13 @@ import Rectangle23 from '../assets/decorations/Rectangle 23.svg';
 import Rectangle24 from '../assets/decorations/Rectangle 24.svg';
 import TechIcon from './icons/Technologies.astro';
 import { skills as categories } from '../data/skills';
+
+const withOffsets = [];
+let acc = 0;
+for (const cat of categories) {
+  withOffsets.push({ ...cat, offset: acc });
+  acc += cat.skills.length;
+}
 ---
 
 <section id="skills" class="w-full py-16 px-6 sm:px-8 md:px-0 md:max-w-4xl md:mx-auto scroll-mt-24 reveal">
@@ -41,14 +47,14 @@ import { skills as categories } from '../data/skills';
 
     <!-- Skill categories -->
     <div class="flex flex-col gap-6 md:gap-8 flex-1 reveal-stagger md:ml-40">
-      {categories.map((cat) => (
+      {withOffsets.map((cat) => (
         <div class="reveal-child">
           <h3 class="text-xs sm:text-sm font-semibold tracking-wider uppercase mb-3" style="color: var(--primary);">{cat.name}</h3>
           <div class="flex flex-wrap gap-2">
             {cat.skills.map((skill, i) => (
               <span
                 class="skill-tag inline-flex items-center justify-center p-1.5 border border-secondary"
-                style={`background: var(--surface); --d: ${140 + i * 70}ms;`}
+                style={`background: var(--surface); --d: ${140 + (cat.offset + i) * 55}ms;`}
                 title={skill.name}
                 aria-label={skill.name}
               >
