@@ -10,7 +10,8 @@ export const skills = [
       { name: "Astro", icon: "astro" },
       { name: "Tailwind", icon: "tailwind" },
       { name: "Vite", icon: "vite" },
-      { name: "Nextjs", icon: "nextjs" }
+      { name: "Nextjs", icon: "nextjs" },
+      
     ]
   },
   {
