@@ -116,21 +116,22 @@ header {
 .reveal-stagger.visible .reveal-child .skill-tag:nth-child(7) { transition-delay: 570ms; }
 .reveal-stagger.visible .reveal-child .skill-tag:nth-child(8) { transition-delay: 640ms; }
 
-/* Line draw animation */
+/* Line draw animation — flexible filler revealed with scaleX (never wraps) */
 .line-draw {
-  width: 0;
-  transition: width 1.4s var(--ease-out) 0.3s;
-  flex-shrink: 1;
-  min-width: 0;
+  flex: 1 1 0%;
+  min-width: min(110px, 26vw);
+  max-width: 150px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.4s var(--ease-out) 0.3s;
 }
 
 .visible .line-draw {
-  width: 100%;
-  max-width: 150px;
+  transform: scaleX(1);
 }
 
 @media (min-width: 768px) {
-  .visible .line-draw {
+  .line-draw {
     max-width: 511px;
   }
 }
@@ -207,14 +208,41 @@ header {
   animation: float 4s ease-in-out infinite;
 }
 
-/* View all link hover */
-.view-all-link svg {
-  transition: transform 200ms var(--ease-out);
+/* View all arrow: self-drawing loop */
+.view-all-link svg path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
 }
 
-.view-all-link:hover svg {
-  transform: translateX(4px);
+.view-all-link svg {
+  animation: arrowFade 2s linear infinite;
 }
+
+.view-all-link svg path:first-child {
+  animation: drawWave 2s ease-in-out infinite;
+}
+
+.view-all-link svg path:last-child {
+  animation: drawHead 2s ease-in-out infinite;
+}
+
+@keyframes arrowFade {
+  0%, 82% { opacity: 1; }
+  95%, 100% { opacity: 0; }
+}
+
+@keyframes drawWave {
+  0%   { stroke-dashoffset: 1; }
+  40%  { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes drawHead {
+  0%, 38% { stroke-dashoffset: 1; }
+  58%     { stroke-dashoffset: 0; }
+  100%    { stroke-dashoffset: 0; }
+}
+
 
 /* Header side rail: line draws down, icons cascade in */
 .rail-line {
@@ -256,11 +284,18 @@ header {
     transition: none;
   }
   .line-draw {
-    width: 511px;
+    transform: none;
     transition: none;
   }
   .float-anim {
     animation: none;
+  }
+  .view-all-link svg,
+  .view-all-link svg path {
+    animation: none;
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    opacity: 1;
   }
   .rail-line {
     animation: none;
