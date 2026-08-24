@@ -30,23 +30,23 @@ for (const cat of categories) {
     </p>
   </div>
 
-  <div class="flex flex-col md:flex-row md:gap-8">
+  <div class="flex flex-row gap-4 md:gap-8">
     <!-- Decorations grouped like Group36 -->
-    <div class="hidden md:block relative md:w-[349px] md:h-[283px] md:shrink-0" aria-hidden="true">
+    <div class="relative flex flex-col items-center gap-6 py-1 w-14 shrink-0 md:block md:w-[349px] md:h-[283px]" aria-hidden="true">
       <!-- Dot grid: top-left -->
-      <Frame27 class="absolute top-[40px] left-0 deco-float opacity-40" style="animation-delay: 0s;" />
+      <Frame27 class="deco-float opacity-40 w-10 md:w-auto md:absolute md:top-[40px] md:left-0" style="animation-delay: 0s;" />
       <!-- Purple crosses: bottom-left -->
-      <Frame29 class="absolute top-[169px] left-[15px] deco-float opacity-30" style="animation-delay: 0.8s;" />
+      <Frame29 class="deco-float opacity-30 w-12 md:w-auto md:absolute md:top-[169px] md:left-[15px]" style="animation-delay: 0.8s;" />
       <!-- Large square: top-right -->
-      <Rectangle24 class="absolute top-0 right-[36px] deco-float opacity-25" style="animation-delay: 1.6s;" />
+      <Rectangle24 class="deco-float opacity-25 w-11 md:w-auto md:absolute md:top-0 md:right-[36px]" style="animation-delay: 1.6s;" />
       <!-- Dot grid 2: middle-right -->
-      <Frame28 class="absolute top-[145px] left-[179px] deco-float opacity-40" style="animation-delay: 2.4s;" />
+      <Frame28 class="deco-float opacity-40 w-10 md:w-auto md:absolute md:top-[145px] md:left-[179px]" style="animation-delay: 2.4s;" />
       <!-- Small square: far-right -->
-      <Rectangle23 class="absolute top-[193px] right-0 deco-float opacity-30" style="animation-delay: 3.2s;" />
+      <Rectangle23 class="deco-float opacity-30 w-9 md:w-auto md:absolute md:top-[193px] md:right-0" style="animation-delay: 3.2s;" />
     </div>
 
     <!-- Skill categories -->
-    <div class="flex flex-col gap-6 md:gap-8 flex-1 reveal-stagger md:ml-40">
+    <div class="flex flex-col gap-6 md:gap-8 flex-1 min-w-0 reveal-stagger md:ml-40">
       {withOffsets.map((cat) => (
         <div class="reveal-child">
           <h3 class="text-xs sm:text-sm font-semibold tracking-wider uppercase mb-3" style="color: var(--primary);">{cat.name}</h3>
