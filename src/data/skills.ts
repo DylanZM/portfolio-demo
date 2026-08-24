@@ -18,27 +18,28 @@ export const skills = [
     skills: [
       { name: "Python", icon: "python" },
       { name: "Node.js", icon: "nodejs" },
-      { name: "Go", icon: "go" },
       { name: "PostgreSQL", icon: "postgresql" },
-      { name: "REST", icon: "rest" }
     ]
   },
   {
     name: "Tools",
     skills: [
       { name: "Github", icon: "github" },
-      { name: "Docker", icon: "docker" },
+      { name: "Git", icon: "git" },
       { name: "Linux", icon: "linux" },
-      { name: "VS Code", icon: "vscode" }
+      { name: "VS Code", icon: "vscode" },
+      { name: "Figma", icon: "figma" },
+      { name: "Vercel", icon: "vercel" }
+
+
     ]
   },
   {
     name: "Learning",
     skills: [
-      { name: "Rust", icon: "rust" },
-      { name: "Three.js", icon: "threejs" },
-      { name: "GSAP", icon: "gsap" },
-      { name: "WebGL", icon: "webgl" }
+      { name: "Go", icon: "go" },
+      { name: "Docker", icon: "docker" },
+      { name: "CPLUSPLUS", icon: "cplusplus" }
     ]
   }
 ];
