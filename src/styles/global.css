@@ -235,18 +235,6 @@ header {
   }
 }
 
-.rail-item svg,
-.rail-item morph-icon {
-  transition: transform 180ms var(--ease-out);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .rail-item:hover svg,
-  .rail-item:hover morph-icon {
-    transform: translateY(-2px);
-  }
-}
-
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .reveal,

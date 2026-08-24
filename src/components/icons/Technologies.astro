@@ -24,7 +24,11 @@ const icons: Record<string, string> = {
 
 };
 
-const { name } = Astro.props;
+const { name, width = 20, height = 20 } = Astro.props;
+
+const svg = (icons[name] ?? '')
+  .replace(/width="\d+"/, `width="${width}"`)
+  .replace(/height="\d+"/, `height="${height}"`);
 ---
 
-<Fragment set:html={icons[name] || ''} />
+<Fragment set:html={svg} />
