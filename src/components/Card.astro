@@ -16,11 +16,11 @@ const {
 ---
 
 <div
-  class="card-hover group flex flex-col reveal-child border border-secondary overflow-hidden"
+  class="group flex flex-col reveal-child border border-secondary overflow-hidden transition-all duration-250 ease-out hover:-translate-y-1 hover:border-primary"
   style="background: var(--surface);"
 >
   <div class="overflow-hidden">
-    <img src={img} alt={alt} class="w-full h-48 object-cover" />
+    <img src={img} alt={alt} class="w-full h-48 object-cover transition-all duration-500 ease-out group-hover:scale-105 group-hover:brightness-110" />
   </div>
 
   <div class="flex flex-col gap-3 flex-1 p-5">
