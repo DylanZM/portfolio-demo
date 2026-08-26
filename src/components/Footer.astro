@@ -1,0 +1,31 @@
+---
+import GitHubIcon from "./icons/GitHub.astro";
+import Discord from "./icons/Discord.astro";
+import X from "./icons/X.astro";
+import Mail from "./icons/Mail.astro";
+---
+
+<footer class="text-base">
+  <div class="w-full border-t border-secondary"></div>
+  <div
+    class="flex flex-col items-center justify-between gap-6 py-10 px-6 md:px-0 md:flex-row max-w-4xl mx-auto"
+  >
+    <p class="text-center md:text-left">
+      &copy; {new Date().getFullYear()} DylanZM. almost all rights reserved
+    </p>
+    <div class="flex items-center gap-4">
+      <a href="mailto:dylanzarzuela62@gmail.com" class="text-secondary hover:text-primary transition-colors duration-200">
+        <Mail width={20} height={20} />
+      </a>
+      <a href="https://discord.com/users/dl_zm" target="_blank" class="text-secondary hover:text-primary transition-colors duration-200">
+        <Discord width={20} height={20} />
+      </a>
+      <a href="https://x.com/DZ_DEV31" target="_blank" class="text-secondary hover:text-primary transition-colors duration-200">
+        <X width={20} height={20} />
+      </a>
+      <a href="https://github.com/DylanZM" target="_blank" class="text-secondary hover:text-primary transition-colors duration-200">
+        <GitHubIcon width={20} height={20} />
+      </a>
+    </div>
+  </div>
+</footer>
