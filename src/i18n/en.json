@@ -1,0 +1,49 @@
+{
+  "nav.home": "Home",
+  "nav.projects": "Projects",
+  "nav.about": "About",
+  "nav.contact": "Contact",
+
+  "hero.greeting": "Hi, I'm",
+  "hero.role1": "Frontend Developer",
+  "hero.role2": "Web Developer",
+  "hero.and": "and",
+  "hero.location": "Dominican Republic 🇩🇴",
+  "hero.description": "I'm a passionate developer with <span class='text-primary font-medium'>+3 years</span> of experience creating beautiful and functional web applications.",
+  "hero.cta": "Contact Me!!",
+  "hero.status": "Currently working on Portfolio",
+
+  "about.heading": "about me",
+  "about.subtitle": "Get to know me better.",
+  "about.greeting": "Hello, I'm Dylan!",
+  "about.bio1": "I'm a junior programmer who loves building web applications that are both beautiful and functional. Always learning and looking for new opportunities to collaborate. I enjoy tackling new challenges and growing as a developer every day.",
+  "about.bio2": "I enjoy solving problems and turning ideas into reality through code. Whether it's debugging a tricky issue or architecting a new feature, I find satisfaction in finding clean and efficient solutions.",
+
+  "projects.heading": "projects",
+  "projects.viewAll": "View all",
+  "projects.subtitle": "Here are some of the projects I've worked on.",
+  "projects.poketui.title": "Poke-Tui",
+  "projects.poketui.desc": "A Pokédex built in the terminal",
+  "projects.playground.title": "Playground",
+  "projects.playground.desc": "Online compiler Playground for C/C++.",
+  "projects.taskmanager.title": "Task Manager",
+  "projects.taskmanager.desc": "Task management application with user authentication.",
+  "card.github": "GitHub",
+  "card.preview": "Preview",
+
+  "skills.heading": "skills",
+  "skills.subtitle": "Technologies and tools I work with.",
+  "skills.category.frontend": "Frontend",
+  "skills.category.backend": "Backend",
+  "skills.category.tools": "Tools",
+  "skills.category.learning": "Learning",
+
+  "contact.heading": "contact",
+  "contact.description": "Feel free to reach out — I'm always open to talking about new projects, creative ideas, or opportunities to be part of something great.",
+  "contact.label.email": "Email",
+  "contact.label.discord": "Discord",
+  "contact.label.x": "X / Twitter",
+  "contact.label.github": "GitHub",
+
+  "footer.tagline": "Junior developer passionate about building beautiful and functional web applications."
+}

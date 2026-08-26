@@ -9,14 +9,14 @@ import Arrow from './icons/Arrow.astro';
   <div class="projects-header flex flex-col gap-2 mb-10 text-left">
     <h2 class="flex flex-wrap items-center gap-3 text-[1.5rem] md:text-[2rem] tracking-wide font-medium">
       <span class="proyect-icon inline-flex"><ProyectIcon /></span>
-      projects
+      <span data-i18n="projects.heading">projects</span>
       <div class="border-t border-primary line-draw"></div>
       <a href="#projects" class="view-all-link ml-auto flex items-center gap-2 text-xs font-medium whitespace-nowrap text-secondary">
-        View all
+        <span data-i18n="projects.viewAll">View all</span>
       <Arrow />
       </a>
     </h2>
-    <p class="text-sm md:text-base text-secondary">
+    <p class="text-sm md:text-base text-secondary" data-i18n="projects.subtitle">
       Here are some of the projects I've worked on.
     </p>
   </div>
@@ -28,6 +28,8 @@ import Arrow from './icons/Arrow.astro';
       title="Poke-Tui"
       description="A Pokédex built in the terminal "
       github="https://github.com/DylanZM/Poke-Tui"
+      titleKey="projects.poketui.title"
+      descKey="projects.poketui.desc"
       tags={[
         { name: "Go", icon: "go" },
        
@@ -40,6 +42,8 @@ import Arrow from './icons/Arrow.astro';
       description="Online compiler Playground for C/C++."
       github="https://github.com/DylanZM/cgo"
       demo="https://cgo-playground.onrender.com/"
+      titleKey="projects.playground.title"
+      descKey="projects.playground.desc"
       tags={[
         { name: "Vite", icon: "vite" },
         { name: "Tailwind CSS", icon: "tailwind" }
@@ -52,6 +56,8 @@ import Arrow from './icons/Arrow.astro';
       description="Task management application with user authentication."
       github="https://github.com/DylanZM/task-manager"
       demo="https://task-manager-sigma-pied-92.vercel.app/login"
+      titleKey="projects.taskmanager.title"
+      descKey="projects.taskmanager.desc"
       tags={[
         { name: "Next.js", icon: "nextjs" },
         { name: "Tailwind CSS", icon: "tailwind" }

@@ -1,13 +1,13 @@
 ---
-const { class: className, href, target, border = "border-primary" } = Astro.props;
+const { class: className, href, target, border = "border-primary", ...rest } = Astro.props;
 ---
 
 {href ? (
-  <a href={href} target={target} class:list={["text-xs font-medium py-1 px-3 h-8 border cursor-pointer transition-colors duration-200 hover:bg-primary hover:text-white btn-press inline-flex items-center justify-center gap-1.5 whitespace-nowrap", border, className]}>
+  <a href={href} target={target} {...rest} class:list={["text-xs font-medium py-1 px-3 h-8 border cursor-pointer transition-colors duration-200 hover:bg-primary hover:text-white btn-press inline-flex items-center justify-center gap-1.5 whitespace-nowrap", border, className]}>
     <slot />
   </a>
 ) : (
-  <button class:list={["text-xs font-medium py-1 px-3 h-8 border cursor-pointer transition-colors duration-200 hover:bg-primary hover:text-white btn-press inline-flex items-center justify-center gap-1.5 whitespace-nowrap", border, className]}>
+  <button {...rest} class:list={["text-xs font-medium py-1 px-3 h-8 border cursor-pointer transition-colors duration-200 hover:bg-primary hover:text-white btn-press inline-flex items-center justify-center gap-1.5 whitespace-nowrap", border, className]}>
     <slot />
   </button>
 )}

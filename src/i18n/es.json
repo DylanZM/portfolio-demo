@@ -1,0 +1,49 @@
+{
+  "nav.home": "Inicio",
+  "nav.projects": "Proyectos",
+  "nav.about": "Acerca de",
+  "nav.contact": "Contacto",
+
+  "hero.greeting": "Hola, soy",
+  "hero.role1": "Desarrollador Frontend",
+  "hero.role2": "Desarrollador Web",
+  "hero.and": "y",
+  "hero.location": "República Dominicana 🇩🇴",
+  "hero.description": "Soy un desarrollador apasionado con <span class='text-primary font-medium'>+3 años</span> de experiencia creando aplicaciones web hermosas y funcionales.",
+  "hero.cta": "Contáctame!!",
+  "hero.status": "Actualmente trabajando en",
+
+  "about.heading": "sobre mí",
+  "about.subtitle": "Conóceme mejor.",
+  "about.greeting": "Hola, soy Dylan!",
+  "about.bio1": "Soy un programador junior que ama construir aplicaciones web que sean hermosas y funcionales. Siempre aprendiendo y buscando nuevas oportunidades para colaborar. Disfruto enfrentar nuevos desafíos y crecer como desarrollador cada día.",
+  "about.bio2": "Disfruto resolver problemas y convertir ideas en realidad a través del código. Ya sea depurando un problema difícil o diseñando una nueva funcionalidad, encuentro satisfacción en encontrar soluciones limpias y eficientes.",
+
+  "projects.heading": "proyectos",
+  "projects.viewAll": "Ver todos",
+  "projects.subtitle": "Aquí hay algunos de los proyectos en los que he trabajado.",
+  "projects.poketui.title": "Poke-Tui",
+  "projects.poketui.desc": "Un Pokédex construido en la terminal",
+  "projects.playground.title": "Playground",
+  "projects.playground.desc": "Compilador online Playground para C/C++.",
+  "projects.taskmanager.title": "Task Manager",
+  "projects.taskmanager.desc": "Aplicación de gestión de tareas con autenticación de usuario.",
+  "card.github": "GitHub",
+  "card.preview": "Vista previa",
+
+  "skills.heading": "habilidades",
+  "skills.subtitle": "Tecnologías y herramientas con las que trabajo.",
+  "skills.category.frontend": "Frontend",
+  "skills.category.backend": "Backend",
+  "skills.category.tools": "Herramientas",
+  "skills.category.learning": "Aprendizaje",
+
+  "contact.heading": "contacto",
+  "contact.description": "No dudes en contactarme — siempre estoy abierto a hablar sobre nuevos proyectos, ideas creativas u oportunidades para ser parte de algo grande.",
+  "contact.label.email": "Correo",
+  "contact.label.discord": "Discord",
+  "contact.label.x": "X / Twitter",
+  "contact.label.github": "GitHub",
+
+  "footer.tagline": "Desarrollador junior apasionado por construir aplicaciones web hermosas y funcionales."
+}

@@ -12,6 +12,8 @@ const {
   tags = [],
   github = "#",
   demo = "#",
+  titleKey = "",
+  descKey = "",
 } = Astro.props;
 ---
 
@@ -39,21 +41,21 @@ const {
     </div>
 
     <div class="flex items-start justify-between gap-2">
-      <h3 class="text-xl font-medium leading-snug">{title}</h3>
+      <h3 class="text-xl font-medium leading-snug" {...titleKey ? { 'data-i18n': titleKey } : {}}>{title}</h3>
       <ArrowUpRight
         size={16}
         class="shrink-0 mt-0.5 text-primary opacity-0 -translate-x-1 translate-y-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0"
       />
     </div>
 
-    <p class="text-sm leading-relaxed text-secondary">
+    <p class="text-sm leading-relaxed text-secondary" {...descKey ? { 'data-i18n': descKey } : {}}>
       {description}
     </p>
 
     <div class="flex gap-3 mt-auto pt-2">
       <Button href={github} target="_blank" border="border-secondary">
         <GitHubIcon width={16} height={16} />
-        GitHub
+        <span data-i18n="card.github">GitHub</span>
       </Button>
       {demo && demo !== "#" && (
         <Button
@@ -62,7 +64,7 @@ const {
           border="border-primary"
         >
           <ChevronsLeftRightEllipsis width={16} height={16} />
-          Preview
+          <span data-i18n="card.preview">Preview</span>
         </Button>
       )}
     </div>

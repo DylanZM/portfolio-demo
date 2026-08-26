@@ -14,11 +14,11 @@ import GitHubIcon from "./icons/GitHub.astro";
     class="reveal-child flex flex-wrap items-center gap-3 text-[1.5rem] md:text-[2rem] tracking-wide font-medium"
   >
     <UserSearch size={24} class="text-primary inline-flex" />
-    contact
+    <span data-i18n="contact.heading">contact</span>
     <div class="border-t border-primary line-draw" style="max-width: 127px;"></div>
   </h2>
 
-  <p class="reveal-child mt-4 text-secondary max-w-md">
+  <p class="reveal-child mt-4 text-secondary max-w-md" data-i18n="contact.description">
     Feel free to reach out — I'm always open to talking about new projects, creative ideas, or opportunities to be part of something great.
   </p>
 
@@ -31,7 +31,7 @@ import GitHubIcon from "./icons/GitHub.astro";
         <Mail width={20} height={20} class="shrink-0" />
       </div>
       <div class="flex flex-col">
-        <span class="text-xs text-secondary uppercase tracking-wider">Email</span>
+        <span class="text-xs text-secondary uppercase tracking-wider" data-i18n="contact.label.email">Email</span>
         <span class="text-sm break-all leading-tight">dylanzarzuela62@gmail.com</span>
       </div>
     </a>
@@ -45,7 +45,7 @@ import GitHubIcon from "./icons/GitHub.astro";
         <Discord width={20} height={20} class="shrink-0" />
       </div>
       <div class="flex flex-col min-w-0">
-        <span class="text-xs text-secondary uppercase tracking-wider">Discord</span>
+        <span class="text-xs text-secondary uppercase tracking-wider" data-i18n="contact.label.discord">Discord</span>
         <span class="text-sm">dl_zm</span>
       </div>
     </a>
@@ -59,7 +59,7 @@ import GitHubIcon from "./icons/GitHub.astro";
         <X width={20} height={20} class="shrink-0" />
       </div>
       <div class="flex flex-col min-w-0">
-        <span class="text-xs text-secondary uppercase tracking-wider">X / Twitter</span>
+        <span class="text-xs text-secondary uppercase tracking-wider" data-i18n="contact.label.x">X / Twitter</span>
         <span class="text-sm">DZ_DEV31</span>
       </div>
     </a>
@@ -73,7 +73,7 @@ import GitHubIcon from "./icons/GitHub.astro";
         <GitHubIcon width={20} height={20} class="shrink-0" />
       </div>
       <div class="flex flex-col min-w-0">
-        <span class="text-xs text-secondary uppercase tracking-wider">GitHub</span>
+        <span class="text-xs text-secondary uppercase tracking-wider" data-i18n="contact.label.github">GitHub</span>
         <span class="text-sm">DylanZM</span>
       </div>
     </a>

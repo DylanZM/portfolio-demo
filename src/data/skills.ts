@@ -1,6 +1,7 @@
 export const skills = [
   {
     name: "Frontend",
+    key: "skills.category.frontend",
     skills: [
       { name: "HTML", icon: "html" },
       { name: "CSS", icon: "css" },
@@ -16,6 +17,7 @@ export const skills = [
   },
   {
     name: "Backend",
+    key: "skills.category.backend",
     skills: [
       { name: "Python", icon: "python" },
       { name: "Node.js", icon: "nodejs" },
@@ -24,6 +26,7 @@ export const skills = [
   },
   {
     name: "Tools",
+    key: "skills.category.tools",
     skills: [
       { name: "Github", icon: "github" },
       { name: "Git", icon: "git" },
@@ -37,6 +40,7 @@ export const skills = [
   },
   {
     name: "Learning",
+    key: "skills.category.learning",
     skills: [
       { name: "Go", icon: "go" },
       { name: "Docker", icon: "docker" },
