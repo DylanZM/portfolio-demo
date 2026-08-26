@@ -1,5 +1,9 @@
 ---
-
+import { UserSearch } from "@lucide/astro";
+import Mail from "./icons/Mail.astro";
+import Discord from "./icons/Discord.astro";
+import X from "./icons/X.astro";
+import GitHubIcon from "./icons/GitHub.astro";
 ---
 
 <section
@@ -9,9 +13,69 @@
   <h2
     class="reveal-child flex flex-wrap items-center gap-3 text-[1.5rem] md:text-[2rem] tracking-wide font-medium"
   >
-    <span class="inline-flex"> </span>
+    <UserSearch size={24} class="text-primary inline-flex" />
     contact
-    <div class="border-t border-primary line-draw" style="max-width: 326px;">
-    </div>
+    <div class="border-t border-primary line-draw" style="max-width: 127px;"></div>
   </h2>
+
+  <p class="reveal-child mt-4 text-secondary max-w-md">
+    Feel free to reach out — I'm always open to talking about new projects, creative ideas, or opportunities to be part of something great.
+  </p>
+
+  <div class="reveal-child mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
+    <a
+      href="mailto:dylanzarzuela62@gmail.com"
+      class="group flex items-center gap-4 p-4 border border-secondary transition-all duration-200 hover:border-primary hover:-translate-y-0.5"
+    >
+      <div class="flex items-center justify-center w-10 h-10 border border-secondary text-secondary transition-colors duration-200 group-hover:bg-primary group-hover:text-white group-hover:border-primary">
+        <Mail width={20} height={20} class="shrink-0" />
+      </div>
+      <div class="flex flex-col">
+        <span class="text-xs text-secondary uppercase tracking-wider">Email</span>
+        <span class="text-sm break-all leading-tight">dylanzarzuela62@gmail.com</span>
+      </div>
+    </a>
+
+    <a
+      href="https://discord.com/users/dl_zm"
+      target="_blank"
+      class="group flex items-center gap-4 p-4 border border-secondary transition-all duration-200 hover:border-primary hover:-translate-y-0.5"
+    >
+      <div class="flex items-center justify-center w-10 h-10 border border-secondary text-secondary transition-colors duration-200 group-hover:bg-primary group-hover:text-white group-hover:border-primary">
+        <Discord width={20} height={20} class="shrink-0" />
+      </div>
+      <div class="flex flex-col min-w-0">
+        <span class="text-xs text-secondary uppercase tracking-wider">Discord</span>
+        <span class="text-sm">dl_zm</span>
+      </div>
+    </a>
+
+    <a
+      href="https://x.com/DZ_DEV31"
+      target="_blank"
+      class="group flex items-center gap-4 p-4 border border-secondary transition-all duration-200 hover:border-primary hover:-translate-y-0.5"
+    >
+      <div class="flex items-center justify-center w-10 h-10 border border-secondary text-secondary transition-colors duration-200 group-hover:bg-primary group-hover:text-white group-hover:border-primary">
+        <X width={20} height={20} class="shrink-0" />
+      </div>
+      <div class="flex flex-col min-w-0">
+        <span class="text-xs text-secondary uppercase tracking-wider">X / Twitter</span>
+        <span class="text-sm">DZ_DEV31</span>
+      </div>
+    </a>
+
+    <a
+      href="https://github.com/DylanZM"
+      target="_blank"
+      class="group flex items-center gap-4 p-4 border border-secondary transition-all duration-200 hover:border-primary hover:-translate-y-0.5"
+    >
+      <div class="flex items-center justify-center w-10 h-10 border border-secondary text-secondary transition-colors duration-200 group-hover:bg-primary group-hover:text-white group-hover:border-primary">
+        <GitHubIcon width={20} height={20} class="shrink-0" />
+      </div>
+      <div class="flex flex-col min-w-0">
+        <span class="text-xs text-secondary uppercase tracking-wider">GitHub</span>
+        <span class="text-sm">DylanZM</span>
+      </div>
+    </a>
+  </div>
 </section>
