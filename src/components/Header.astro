@@ -46,7 +46,7 @@ import { ChevronDown } from "lucide";
           <span id="lang-label">EN</span>
           <MorphIcon icon={ChevronDown} size={20} />
         </button>
-        <ul id="lang-dropdown" class="hidden absolute top-full right-0 mt-2 py-1 px-3 border border-secondary text-sm font-semibold" style="background: var(--surface);">
+        <ul id="lang-dropdown" class="lang-dropdown absolute top-full right-0 mt-2 py-1 px-3 border border-secondary text-sm font-semibold" style="background: var(--surface);">
           <li><button class="lang-option cursor-pointer block w-full text-left py-1 hover:text-primary transition-colors" data-lang="en">EN</button></li>
           <li><button class="lang-option cursor-pointer block w-full text-left py-1 hover:text-primary transition-colors" data-lang="es">ES</button></li>
         </ul>
@@ -68,14 +68,14 @@ import { ChevronDown } from "lucide";
     const open = btn.getAttribute("aria-expanded") !== "true";
     btn.setAttribute("aria-expanded", String(open));
     icon.icon = open ? ChevronUp : ChevronDown;
-    dropdown.classList.toggle("hidden", !open);
+    dropdown.classList.toggle("lang-dropdown-open", open);
   });
 
   document.querySelectorAll(".lang-option").forEach((option) => {
     option.addEventListener("click", () => {
       const lang = option.getAttribute("data-lang")!;
       label.textContent = lang.toUpperCase();
-      dropdown.classList.add("hidden");
+      dropdown.classList.remove("lang-dropdown-open");
       btn.setAttribute("aria-expanded", "false");
       icon.icon = ChevronDown;
 
@@ -87,7 +87,7 @@ import { ChevronDown } from "lucide";
 
   document.addEventListener("click", (e) => {
     if (!btn.contains(e.target as Node) && !dropdown.contains(e.target as Node)) {
-      dropdown.classList.add("hidden");
+      dropdown.classList.remove("lang-dropdown-open");
       btn.setAttribute("aria-expanded", "false");
       icon.icon = ChevronDown;
     }
