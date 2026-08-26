@@ -2,22 +2,22 @@
 import { UserPen } from "@lucide/astro";
 ---
 
-<section class="w-full py-16 px-6 sm:px-8 md:px-0 md:max-w-4xl md:mx-auto scroll-mt-24 reveal">
+<section id="about" class="w-full py-16 px-6 sm:px-8 md:px-0 md:max-w-4xl md:mx-auto scroll-mt-24 reveal reveal-stagger">
   <div class="container">
-    <h2 class="flex flex-wrap items-center gap-3 text-[1.5rem] md:text-[2rem] tracking-wide font-medium">
+    <h2 class="reveal-child flex flex-wrap items-center gap-3 text-[1.5rem] md:text-[2rem] tracking-wide font-medium">
       <span class="inline-flex">
         <UserPen size={24} class="text-primary" />
       </span>
       about me
       <div class="border-t border-primary line-draw" style="max-width: 326px;"></div>
     </h2>
-    <p class="text-sm md:text-base mt-2" style="color: var(--secondary)">
+    <p class="reveal-child text-sm md:text-base mt-2" style="color: var(--secondary)">
       Get to know me better.
     </p>
 
     <div class="flex flex-col md:flex-row gap-8 mt-8 items-start">
-      <div class="flex-1">
-        <span class="text-secondary text-base">Hello, I'm Dylan!</span>
+      <div class="reveal-child flex-1">
+        <span class="text-secondary text-base" style="color: var(--secondary)">Hello, I'm Dylan!</span>
         <p class="mt-4 text-base leading-relaxed" style="color: var(--secondary)">
           I'm a junior programmer who loves building web applications that are both beautiful and functional. Always learning and looking for new opportunities to collaborate. I enjoy tackling new challenges and growing as a developer every day.
         </p>
@@ -25,7 +25,7 @@ import { UserPen } from "@lucide/astro";
           I enjoy solving problems and turning ideas into reality through code. Whether it's debugging a tricky issue or architecting a new feature, I find satisfaction in finding clean and efficient solutions.
         </p>
       </div>
-      <div class="w-full md:w-72 shrink-0">
+      <div class="reveal-child w-full md:w-72 shrink-0">
         <img src="/src/assets/profile.png" alt="About me" class="w-full h-auto border border-secondary" />
       </div>
     </div>
