@@ -31,6 +31,9 @@
   --color-primary: #a34dbd;
   --color-secondary: #6b7280;
   --color-surface: #f3f4f6;
+  --color-border: #e5e7eb;
+  --color-text: #1a1a1a;
+  --color-bg: #fafafa;
 }
 
 html,

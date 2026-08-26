@@ -25,7 +25,7 @@ for (const cat of categories) {
       skills
       <div class="border-t border-primary line-draw" style="max-width: 239px;"></div>
     </h2>
-    <p class="text-sm md:text-base" style="color: var(--secondary)">
+    <p class="text-sm md:text-base text-secondary">
       Technologies and tools I work with.
     </p>
   </div>
@@ -49,7 +49,7 @@ for (const cat of categories) {
     <div class="flex flex-col gap-6 md:gap-8 flex-1 min-w-0 reveal-stagger md:ml-40">
       {withOffsets.map((cat) => (
         <div class="reveal-child">
-          <h3 class="text-xs sm:text-sm font-semibold tracking-wider uppercase mb-3" style="color: var(--primary);">{cat.name}</h3>
+          <h3 class="text-xs sm:text-sm font-semibold tracking-wider uppercase mb-3 text-primary">{cat.name}</h3>
           <div class="flex flex-wrap gap-2">
             {cat.skills.map((skill, i) => (
               <span
