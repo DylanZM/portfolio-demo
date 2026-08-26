@@ -2,6 +2,7 @@
 import ThemeToggle from "./ThemeToggle.astro";
 import GitHubIcon from "./icons/GitHub.astro";
 import Mail from "./icons/Mail.astro";
+import Logo from "./icons/Logo.astro";
 import MorphIcon from "morphicons/astro";
 import { ChevronDown } from "lucide";
 ---
@@ -21,9 +22,10 @@ import { ChevronDown } from "lucide";
       </a>
     </div>
 
-    <a href="/" class="text-lg font-bold tracking-wide md:text-xl"
-      >DylanZM</a
-    >
+    <a href="/" class="flex items-center gap-2 text-lg font-bold tracking-wide md:text-xl">
+      <Logo width={28} height={28} class="text-primary" />
+      DylanZM
+    </a>
     <ul
       class="hidden items-center space-x-6 text-sm font-medium tracking-wide md:flex"
     >
