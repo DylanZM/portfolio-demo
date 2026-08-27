@@ -31,7 +31,6 @@ export const skills = [
       { name: "Github", icon: "github" },
       { name: "Git", icon: "git" },
       { name: "Linux", icon: "linux" },
-      { name: "VS Code", icon: "vscode" },
       { name: "Figma", icon: "figma" },
       { name: "Vercel", icon: "vercel" }
 
