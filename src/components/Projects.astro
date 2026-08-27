@@ -2,7 +2,9 @@
 import ProyectIcon from './icons/proyect.astro';
 import Card from './Card.astro';
 import Arrow from './icons/Arrow.astro';
-
+import poketuiImg from '../assets/projects/poketui.png';
+import playgroundImg from '../assets/projects/playground.png';
+import taskmanagerImg from '../assets/projects/task-manager.png';
 ---
 
 <section id="projects" class="w-full py-16 px-6 sm:px-8 md:px-0 md:max-w-4xl md:mx-auto scroll-mt-24 reveal">
@@ -23,7 +25,7 @@ import Arrow from './icons/Arrow.astro';
 
   <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 reveal-stagger">
     <Card
-      img="/src/assets/projects/poketui.png"
+      img={poketuiImg.src}
       alt="Poke-Tui"
       title="Poke-Tui"
       description="A Pokédex built in the terminal "
@@ -36,7 +38,7 @@ import Arrow from './icons/Arrow.astro';
       ]}
     />
     <Card
-      img="/src/assets/projects/playground.png"
+      img={playgroundImg.src}
       alt="E-Commerce"
       title="Playground"
       description="Online compiler Playground for C/C++."
@@ -50,7 +52,7 @@ import Arrow from './icons/Arrow.astro';
       ]}
     />
     <Card
-      img="/src/assets/projects/task-manager.png"
+      img={taskmanagerImg.src}
       alt="Task Manager"
       title="Task Manager"
       description="Task management application with user authentication."

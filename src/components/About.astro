@@ -1,6 +1,6 @@
 ---
 import { UserPen } from "@lucide/astro";
-
+import profileImg from "../assets/profile.png";
 ---
 
 <section id="about" class="w-full py-16 px-6 sm:px-8 md:px-0 md:max-w-4xl md:mx-auto scroll-mt-24 reveal reveal-stagger">
@@ -25,7 +25,7 @@ import { UserPen } from "@lucide/astro";
         </p>
       </div>
       <div class="reveal-child w-full md:w-72 shrink-0">
-        <img src="/src/assets/profile.png" alt="About me" class="w-full h-auto border border-secondary" />
+        <img src={profileImg.src} alt="About me" class="w-full h-auto border border-secondary" />
       </div>
     </div>
   </div>
