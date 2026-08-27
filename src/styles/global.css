@@ -290,6 +290,20 @@ header {
   pointer-events: auto;
 }
 
+/* Mobile menu */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms var(--ease-out), opacity 200ms var(--ease-out);
+  opacity: 0;
+  background: color-mix(in srgb, var(--bg) 95%, transparent);
+}
+
+.mobile-menu.mobile-menu-open {
+  max-height: 400px;
+  opacity: 1;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
@@ -325,6 +339,9 @@ header {
     animation: none;
   }
   .lang-dropdown {
+    transition: none;
+  }
+  .mobile-menu {
     transition: none;
   }
 }

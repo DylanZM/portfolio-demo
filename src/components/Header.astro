@@ -4,7 +4,7 @@ import GitHubIcon from "./icons/GitHub.astro";
 import Mail from "./icons/Mail.astro";
 import Logo from "./icons/Logo.astro";
 import MorphIcon from "morphicons/astro";
-import { ChevronDown } from "lucide";
+import { ChevronDown, Menu, X } from "lucide";
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-md overflow-visible" style="background: color-mix(in srgb, var(--bg) 85%, transparent);">
@@ -26,14 +26,16 @@ import { ChevronDown } from "lucide";
       <Logo width={28} height={28} class="text-primary" />
       DylanZM
     </a>
+
+    <!-- Desktop nav -->
     <ul
       class="hidden items-center space-x-6 text-sm font-medium tracking-wide md:flex"
     >
       <li>
         <a href="/" class="relative transition-colors duration-200 after:content-[''] after:absolute after:left-0 after:top-full after:mt-1 after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full" data-i18n="nav.home">Home</a>
-        <li>
+      </li>
+      <li>
         <a href="#projects" class="relative transition-colors duration-200 after:content-[''] after:absolute after:left-0 after:top-full after:mt-1 after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full" data-i18n="nav.projects">Projects</a>
-        </li>
       </li>
       <li>
         <a href="#about" class="relative transition-colors duration-200 after:content-[''] after:absolute after:left-0 after:top-full after:mt-1 after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full" data-i18n="nav.about">About</a>
@@ -52,13 +54,34 @@ import { ChevronDown } from "lucide";
         </ul>
       </li>
     </ul>
+
+    <!-- Mobile menu toggle -->
+    <button id="mobile-menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" class="md:hidden flex items-center justify-center w-10 h-10 text-secondary hover:text-primary transition-colors duration-200 cursor-pointer">
+      <MorphIcon icon={Menu} size={24} id="mobile-menu-icon" />
+    </button>
   </nav>
+
+  <!-- Mobile menu panel -->
+  <div id="mobile-menu" class="mobile-menu md:hidden">
+    <div class="flex flex-col items-center gap-6 py-8">
+      <a href="/" class="text-lg font-medium text-secondary hover:text-primary transition-colors duration-200" data-i18n="nav.home">Home</a>
+      <a href="#projects" class="text-lg font-medium text-secondary hover:text-primary transition-colors duration-200" data-i18n="nav.projects">Projects</a>
+      <a href="#about" class="text-lg font-medium text-secondary hover:text-primary transition-colors duration-200" data-i18n="nav.about">About</a>
+      <a href="#contact" class="text-lg font-medium text-secondary hover:text-primary transition-colors duration-200" data-i18n="nav.contact">Contact</a>
+      <div class="flex items-center gap-2 text-secondary">
+        <button class="mobile-lang-btn cursor-pointer hover:text-primary transition-colors duration-200 text-lg font-medium" data-lang="en">EN</button>
+        <span>/</span>
+        <button class="mobile-lang-btn cursor-pointer hover:text-primary transition-colors duration-200 text-lg font-medium" data-lang="es">ES</button>
+      </div>
+    </div>
+  </div>
 </header>
 
 <script>
-  import { ChevronDown, ChevronUp } from "lucide";
+  import { ChevronDown, ChevronUp, Menu, X } from "lucide";
   import type { MorphIconElement } from "morphicons/element";
 
+  // Language toggle (desktop)
   const btn = document.querySelector<HTMLButtonElement>("#lang-toggle")!;
   const icon = btn.querySelector<MorphIconElement>("morph-icon")!;
   const dropdown = document.querySelector<HTMLUListElement>("#lang-dropdown")!;
@@ -92,8 +115,36 @@ import { ChevronDown } from "lucide";
       icon.icon = ChevronDown;
     }
   });
+
+  // Mobile menu
+  const mobileToggle = document.querySelector<HTMLButtonElement>("#mobile-menu-toggle")!;
+  const mobileMenu = document.querySelector<HTMLDivElement>("#mobile-menu")!;
+  const mobileIcon = mobileToggle.querySelector<MorphIconElement>("morph-icon")!;
+
+  mobileToggle.addEventListener("click", () => {
+    const open = mobileMenu.classList.contains("mobile-menu-open");
+    mobileMenu.classList.toggle("mobile-menu-open", !open);
+    mobileToggle.setAttribute("aria-expanded", String(!open));
+    mobileIcon.icon = open ? Menu : X;
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("mobile-menu-open");
+      mobileToggle.setAttribute("aria-expanded", "false");
+      mobileIcon.icon = Menu;
+    });
+  });
+
+  // Mobile language switch
+  document.querySelectorAll(".mobile-lang-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const lang = btn.getAttribute("data-lang")!;
+      label.textContent = lang.toUpperCase();
+      if (typeof (window as any).translateTo === "function") {
+        (window as any).translateTo(lang);
+      }
+    });
+  });
 </script>
-
-
-
-
