@@ -4,7 +4,7 @@ import GitHubIcon from "./icons/GitHub.astro";
 import Mail from "./icons/Mail.astro";
 import Logo from "./icons/Logo.astro";
 import MorphIcon from "morphicons/astro";
-import { ChevronDown, Menu, X } from "lucide";
+import { ChevronDown, Menu, Moon, Sun, X } from "lucide";
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-md overflow-visible" style="background: color-mix(in srgb, var(--bg) 85%, transparent);">
@@ -60,25 +60,49 @@ import { ChevronDown, Menu, X } from "lucide";
       <MorphIcon icon={Menu} size={24} id="mobile-menu-icon" />
     </button>
   </nav>
+</header>
 
-  <!-- Mobile menu panel -->
-  <div id="mobile-menu" class="mobile-menu md:hidden">
-    <div class="flex flex-col items-center gap-6 py-8">
-      <a href="/" class="text-lg font-medium text-secondary hover:text-primary transition-colors duration-200" data-i18n="nav.home">Home</a>
-      <a href="#projects" class="text-lg font-medium text-secondary hover:text-primary transition-colors duration-200" data-i18n="nav.projects">Projects</a>
-      <a href="#about" class="text-lg font-medium text-secondary hover:text-primary transition-colors duration-200" data-i18n="nav.about">About</a>
-      <a href="#contact" class="text-lg font-medium text-secondary hover:text-primary transition-colors duration-200" data-i18n="nav.contact">Contact</a>
-      <div class="flex items-center gap-2 text-secondary">
-        <button class="mobile-lang-btn cursor-pointer hover:text-primary transition-colors duration-200 text-lg font-medium" data-lang="en">EN</button>
-        <span>/</span>
-        <button class="mobile-lang-btn cursor-pointer hover:text-primary transition-colors duration-200 text-lg font-medium" data-lang="es">ES</button>
+<!-- Mobile menu panel (outside header for proper z-index) -->
+<div id="mobile-menu" class="mobile-menu md:hidden" aria-hidden="true">
+  <div class="mobile-menu-panel">
+    <div class="mobile-menu-header">
+      <a href="/" class="mobile-brand">DylanZM</a>
+      <button id="mobile-menu-close" type="button" aria-label="Close menu" class="mobile-menu-close">
+        <MorphIcon icon={X} size={22} />
+      </button>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="/" class="mobile-nav-link" data-i18n="nav.home"><span>#</span>home</a>
+      <a href="#projects" class="mobile-nav-link" data-i18n="nav.projects"><span>#</span>projects</a>
+      <a href="#about" class="mobile-nav-link" data-i18n="nav.about"><span>#</span>about</a>
+      <a href="#contact" class="mobile-nav-link" data-i18n="nav.contact"><span>#</span>contact</a>
+    </nav>
+
+    <div class="mobile-menu-footer">
+      <div class="mobile-lang-switch">
+        <button class="mobile-lang-btn active" data-lang="en">EN</button>
+        <span class="text-primary">/</span>
+        <button class="mobile-lang-btn" data-lang="es">ES</button>
+      </div>
+
+      <div class="mobile-socials">
+        <button id="mobile-theme-toggle" type="button" aria-label="Toggle theme" class="mobile-social-icon theme-switch">
+          <MorphIcon id="mobile-theme-icon" icon={Sun} size={18} />
+        </button>
+        <a href="https://github.com/DylanZM" target="_blank" rel="noreferrer" class="mobile-social-icon" aria-label="GitHub">
+          <GitHubIcon width={18} height={18} />
+        </a>
+        <a href="mailto:dylanzarzuela62@gmail.com" class="mobile-social-icon" aria-label="Email">
+          <Mail width={18} height={18} />
+        </a>
       </div>
     </div>
   </div>
-</header>
+</div>
 
 <script>
-  import { ChevronDown, ChevronUp, Menu, X } from "lucide";
+  import { ChevronDown, ChevronUp, Menu, Moon, Sun, X } from "lucide";
   import type { MorphIconElement } from "morphicons/element";
 
   // Language toggle (desktop)
@@ -119,22 +143,45 @@ import { ChevronDown, Menu, X } from "lucide";
   // Mobile menu
   const mobileToggle = document.querySelector<HTMLButtonElement>("#mobile-menu-toggle")!;
   const mobileMenu = document.querySelector<HTMLDivElement>("#mobile-menu")!;
+  const mobileMenuClose = document.querySelector<HTMLButtonElement>("#mobile-menu-close")!;
   const mobileIcon = mobileToggle.querySelector<MorphIconElement>("morph-icon")!;
+  const mobileThemeButton = document.querySelector<HTMLButtonElement>("#mobile-theme-toggle")!;
+  const mobileThemeIcon = mobileThemeButton.querySelector<MorphIconElement>("morph-icon")!;
+
+  const closeMobileMenu = () => {
+    mobileMenu.classList.remove("mobile-menu-open");
+    mobileMenu.setAttribute("aria-hidden", "true");
+    mobileToggle.setAttribute("aria-expanded", "false");
+    mobileIcon.icon = Menu;
+  };
+
+  const openMobileMenu = () => {
+    mobileMenu.classList.add("mobile-menu-open");
+    mobileMenu.setAttribute("aria-hidden", "false");
+    mobileToggle.setAttribute("aria-expanded", "true");
+    mobileIcon.icon = X;
+  };
 
   mobileToggle.addEventListener("click", () => {
     const open = mobileMenu.classList.contains("mobile-menu-open");
-    mobileMenu.classList.toggle("mobile-menu-open", !open);
-    mobileToggle.setAttribute("aria-expanded", String(!open));
-    mobileIcon.icon = open ? Menu : X;
+    if (open) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
   });
 
-  // Close mobile menu on link click
+  mobileMenuClose.addEventListener("click", closeMobileMenu);
+
   mobileMenu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.remove("mobile-menu-open");
-      mobileToggle.setAttribute("aria-expanded", "false");
-      mobileIcon.icon = Menu;
-    });
+    link.addEventListener("click", closeMobileMenu);
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!mobileMenu.classList.contains("mobile-menu-open")) return;
+    if (!mobileMenu.contains(e.target as Node) && !mobileToggle.contains(e.target as Node)) {
+      closeMobileMenu();
+    }
   });
 
   // Mobile language switch
@@ -142,9 +189,27 @@ import { ChevronDown, Menu, X } from "lucide";
     btn.addEventListener("click", () => {
       const lang = btn.getAttribute("data-lang")!;
       label.textContent = lang.toUpperCase();
+      
+      // Update active state
+      document.querySelectorAll(".mobile-lang-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      
       if (typeof (window as any).translateTo === "function") {
         (window as any).translateTo(lang);
       }
     });
+  });
+
+  const updateThemeButton = () => {
+    const dark = document.documentElement.classList.contains("dark");
+    mobileThemeIcon.icon = dark ? Moon : Sun;
+  };
+
+  updateThemeButton();
+
+  mobileThemeButton.addEventListener("click", () => {
+    const dark = document.documentElement.classList.toggle("dark");
+    localStorage.setItem("theme", dark ? "light" : "dark");
+    updateThemeButton();
   });
 </script>
