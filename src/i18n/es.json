@@ -1,6 +1,7 @@
 {
   "nav.home": "Inicio",
   "nav.projects": "Proyectos",
+  "nav.experience": "Experiencia",
   "nav.about": "Acerca de",
   "nav.contact": "Contacto",
 
@@ -37,6 +38,13 @@
   "skills.category.backend": "Backend",
   "skills.category.tools": "Herramientas",
   "skills.category.learning": "Aprendizaje",
+
+  "experience.heading": "experiencia",
+  "experience.subtitle": "Mi trayectoria profesional.",
+  "experience.date1": "2024 - 2026",
+  "experience.title1": "Desarrollador Full Stack",
+  "experience.company1": "Pomaray",
+  "experience.desc1": "Contribuí al desarrollo de una plataforma educativa full stack, trabajando en frontend y backend para entregar herramientas de aprendizaje y mejorar la experiencia de usuario para estudiantes y educadores.",
 
   "contact.heading": "contacto",
   "contact.description": "No dudes en contactarme — siempre estoy abierto a hablar sobre nuevos proyectos, ideas creativas u oportunidades para ser parte de algo grande.",
