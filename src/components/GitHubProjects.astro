@@ -1,0 +1,39 @@
+---
+import Card from './Card.astro';
+import ProyectIcon from './icons/proyect.astro';
+import { allProjects } from '../data/allProjects';
+
+const projects = allProjects;
+---
+
+<section id="projects" class="w-full py-16 px-6 sm:px-8 md:px-0 md:max-w-4xl md:mx-auto scroll-mt-24 reveal">
+  <div class="projects-header flex flex-col gap-2 mb-10 text-left">
+    <h2 class="flex flex-wrap items-center gap-3 text-[1.5rem] md:text-[2rem] tracking-wide font-medium">
+      <span class="proyect-icon inline-flex"><ProyectIcon /></span>
+      <span data-i18n="projects.heading">projects</span>
+      <div class="border-t border-primary line-draw"></div>
+    </h2>
+    <p class="text-sm md:text-base text-secondary" data-i18n="projects.pageSubtitle">
+      All my projects.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 reveal-stagger">
+    {projects.map((p) => {
+      const slug = p.title.toLowerCase().replace(/[^a-z0-9]/g, '');
+      return (
+        <Card
+          img={p.img}
+          alt={p.alt}
+          title={p.title}
+          description={p.description}
+          github={p.github}
+          demo={p.demo}
+          titleKey={`projects.${slug}.title`}
+          descKey={`projects.${slug}.desc`}
+          tags={p.tags}
+        />
+      );
+    })}
+  </div>
+</section>

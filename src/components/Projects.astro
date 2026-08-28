@@ -2,9 +2,15 @@
 import ProyectIcon from './icons/proyect.astro';
 import Card from './Card.astro';
 import Arrow from './icons/Arrow.astro';
-import medisysImg from '../assets/projects/medisys.svg';
-import playgroundImg from '../assets/projects/playground.png';
-import taskmanagerImg from '../assets/projects/task-manager.png';
+import { projects } from '../data/projects';
+
+interface Props {
+  limit?: number;
+}
+
+const { limit } = Astro.props;
+const list = limit ? projects.slice(0, limit) : projects;
+const showViewAll = !!limit;
 ---
 
 <section id="projects" class="w-full py-16 px-6 sm:px-8 md:px-0 md:max-w-4xl md:mx-auto scroll-mt-24 reveal">
@@ -13,57 +19,31 @@ import taskmanagerImg from '../assets/projects/task-manager.png';
       <span class="proyect-icon inline-flex"><ProyectIcon /></span>
       <span data-i18n="projects.heading">projects</span>
       <div class="border-t border-primary line-draw"></div>
-      <a href="#projects" class="view-all-link ml-auto flex items-center gap-2 text-xs font-medium whitespace-nowrap text-secondary">
-        <span data-i18n="projects.viewAll">View all</span>
-      <Arrow />
-      </a>
+      {showViewAll && (
+        <a href="/projects" class="view-all-link ml-auto flex items-center gap-2 text-xs font-medium whitespace-nowrap text-secondary">
+          <span data-i18n="projects.viewAll">View all</span>
+          <Arrow />
+        </a>
+      )}
     </h2>
     <p class="text-sm md:text-base text-secondary" data-i18n="projects.subtitle">
       Here are some of the projects I've worked on.
     </p>
   </div>
 
-  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 reveal-stagger items-start">
-    <Card
-      img={medisysImg.src}
-      alt="MediSys"
-      title="MediSys"
-      description="A management system for clinics and hospitals."
-      github="https://github.com/DylanZM/MediSys"
-      titleKey="projects.medisys.title"
-      descKey="projects.medisys.desc"
-      tags={[
-        { name: "Next.js", icon: "nextjs" },
-        { name: "Tailwind CSS", icon: "tailwind" }
-      ]}
-    />
-    <Card
-      img={playgroundImg.src}
-      alt="E-Commerce"
-      title="Playground"
-      description="Online compiler Playground for C/C++."
-      github="https://github.com/DylanZM/cgo"
-      demo="https://cgo-playground.onrender.com/"
-      titleKey="projects.playground.title"
-      descKey="projects.playground.desc"
-      tags={[
-        { name: "Vite", icon: "vite" },
-        { name: "Tailwind CSS", icon: "tailwind" }
-      ]}
-    />
-    <Card
-      img={taskmanagerImg.src}
-      alt="Task Manager"
-      title="Task Manager"
-      description="Task management application with user authentication."
-      github="https://github.com/DylanZM/task-manager"
-      demo="https://task-manager-sigma-pied-92.vercel.app/login"
-      titleKey="projects.taskmanager.title"
-      descKey="projects.taskmanager.desc"
-      tags={[
-        { name: "Next.js", icon: "nextjs" },
-        { name: "Tailwind CSS", icon: "tailwind" }
-      ]}
-    />
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 reveal-stagger">
+    {list.map((p) => (
+      <Card
+        img={p.img}
+        alt={p.alt}
+        title={p.title}
+        description={p.description}
+        github={p.github}
+        demo={p.demo ?? '#'}
+        titleKey={p.titleKey}
+        descKey={p.descKey}
+        tags={p.tags}
+      />
+    ))}
   </div>
 </section>
