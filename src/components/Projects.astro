@@ -2,7 +2,7 @@
 import ProyectIcon from './icons/proyect.astro';
 import Card from './Card.astro';
 import Arrow from './icons/Arrow.astro';
-import poketuiImg from '../assets/projects/poketui.png';
+import medisysImg from '../assets/projects/medisys.svg';
 import playgroundImg from '../assets/projects/playground.png';
 import taskmanagerImg from '../assets/projects/task-manager.png';
 ---
@@ -23,18 +23,18 @@ import taskmanagerImg from '../assets/projects/task-manager.png';
     </p>
   </div>
 
-  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 reveal-stagger">
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 reveal-stagger items-start">
     <Card
-      img={poketuiImg.src}
-      alt="Poke-Tui"
-      title="Poke-Tui"
-      description="A Pokédex built in the terminal "
-      github="https://github.com/DylanZM/Poke-Tui"
-      titleKey="projects.poketui.title"
-      descKey="projects.poketui.desc"
+      img={medisysImg.src}
+      alt="MediSys"
+      title="MediSys"
+      description="A management system for clinics and hospitals."
+      github="https://github.com/DylanZM/MediSys"
+      titleKey="projects.medisys.title"
+      descKey="projects.medisys.desc"
       tags={[
-        { name: "Go", icon: "go" },
-       
+        { name: "Next.js", icon: "nextjs" },
+        { name: "Tailwind CSS", icon: "tailwind" }
       ]}
     />
     <Card
