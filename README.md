@@ -8,7 +8,7 @@ A fast, modern portfolio site that presents a professional profile: an about sec
 
 ### Screenshots
 
-<!-- Add at least one relevant screenshot, e.g. docs/screenshot.png -->
+![Portfolio homepage](docs/screenshot.png)
 
 ## Getting Started
 
