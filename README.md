@@ -1,46 +1,105 @@
-# Astro Starter Kit: Basics
+# Portfolio Demo
+
+A personal portfolio website built with Astro and Tailwind CSS.
+
+## Description
+
+A fast, modern portfolio site that presents a professional profile: an about section, skills, work experience, a projects gallery, GitHub project listings, and a contact form. It ships with dark mode, smooth section animations, and full English/Spanish localization. Project and skill content live in simple data files, so updating the site does not require touching the components.
+
+### Screenshots
+
+<!-- Add at least one relevant screenshot, e.g. docs/screenshot.png -->
+
+## Getting Started
+
+### Dependencies
+
+- Node.js >= 22.12.0
+- npm (bundled with Node.js)
+
+Main libraries:
+
+- [Astro](https://astro.build) ^7.2
+- [Tailwind CSS](https://tailwindcss.com) ^4.3
+- [@lucide/astro](https://lucide.dev) and [morphicons](https://morphicons.com) for icons
+- [@animateicons/react](https://animateicons.dev) for icon animations
+
+### Installing
+
+1. Clone the repository:
 
 ```sh
-npm create astro@latest -- --template basics
+git clone <repository-url>
+cd portfolio-demo
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+2. Install dependencies:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```sh
+npm install
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Executing program
 
-## 🧞 Commands
+Run all commands from the project root:
 
-All commands are run from the root of the project, from a terminal:
+```sh
+npm run dev
+```
+
+Starts the local dev server at `localhost:4321`.
+
+Other commands:
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm run build`           | Builds the production site to `./dist/`          |
+| `npm run preview`         | Previews the build locally, before deploying     |
+| `npm run astro ...`       | Runs CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Shows help for the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Project Structure
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```text
+/
+├── public/            # Static assets (favicons)
+├── src/
+│   ├── assets/        # Images and media
+│   ├── components/    # UI sections (Hero, About, Skills, Experience, Projects, Contact, ...)
+│   ├── data/          # Content data (projects, skills)
+│   ├── i18n/          # Localization files (en, es)
+│   ├── layouts/       # Page layouts
+│   ├── lib/           # Helpers (GitHub API)
+│   ├── pages/         # Routes (index, projects)
+│   └── styles/        # Global styles
+├── astro.config.mjs
+└── package.json
+```
+
+## Help
+
+If the dev server does not start, make sure your Node.js version matches the requirement above:
+
+```sh
+node -v
+```
+
+To reinstall dependencies from a clean state:
+
+```sh
+rm -rf node_modules package-lock.json
+npm install
+```
+
+For Astro CLI help:
+
+```sh
+npm run astro -- --help
+```
+
+More information is available in the [Astro documentation](https://docs.astro.build).
+
+## License
+
+No license has been specified for this project yet. Contact the author for usage terms.
