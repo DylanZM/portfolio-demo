@@ -29,7 +29,7 @@ Main libraries:
 1. Clone the repository:
 
 ```sh
-git clone <repository-url>
+git clone https://github.com/DylanZM/portfolio-demo.git
 cd portfolio-demo
 ```
 
