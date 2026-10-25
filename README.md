@@ -12,17 +12,12 @@ A fast, modern portfolio site that presents a professional profile: an about sec
 
 ## Getting Started
 
-### Dependencies
 
-- Node.js >= 22.12.0
-- npm (bundled with Node.js)
-
-Main libraries:
+libraries:
 
 - [Astro](https://astro.build) ^7.2
 - [Tailwind CSS](https://tailwindcss.com) ^4.3
 - [@lucide/astro](https://lucide.dev) and [morphicons](https://morphicons.com) for icons
-- [@animateicons/react](https://animateicons.dev) for icon animations
 
 ### Installing
 
@@ -39,9 +34,7 @@ cd portfolio-demo
 npm install
 ```
 
-### Executing program
-
-Run all commands from the project root:
+3. execute program
 
 ```sh
 npm run dev
@@ -49,15 +42,6 @@ npm run dev
 
 Starts the local dev server at `localhost:4321`.
 
-Other commands:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Builds the production site to `./dist/`          |
-| `npm run preview`         | Previews the build locally, before deploying     |
-| `npm run astro ...`       | Runs CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Shows help for the Astro CLI                     |
 
 ## Project Structure
 
@@ -77,28 +61,7 @@ Other commands:
 └── package.json
 ```
 
-## Help
-
-If the dev server does not start, make sure your Node.js version matches the requirement above:
-
-```sh
-node -v
 ```
-
-To reinstall dependencies from a clean state:
-
-```sh
-rm -rf node_modules package-lock.json
-npm install
-```
-
-For Astro CLI help:
-
-```sh
-npm run astro -- --help
-```
-
-More information is available in the [Astro documentation](https://docs.astro.build).
 
 ## License
 
