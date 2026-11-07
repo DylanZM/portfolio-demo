@@ -24,7 +24,7 @@ libraries:
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/DylanZM/portfolio-demo.git
+git clone <repository-url>
 cd portfolio-demo
 ```
 
@@ -43,3 +43,26 @@ npm run dev
 Starts the local dev server at `localhost:4321`.
 
 
+## Project Structure
+
+```text
+/
+├── public/            # Static assets (favicons)
+├── src/
+│   ├── assets/        # Images and media
+│   ├── components/    # UI sections (Hero, About, Skills, Experience, Projects, Contact, ...)
+│   ├── data/          # Content data (projects, skills)
+│   ├── i18n/          # Localization files (en, es)
+│   ├── layouts/       # Page layouts
+│   ├── lib/           # Helpers (GitHub API)
+│   ├── pages/         # Routes (index, projects)
+│   └── styles/        # Global styles
+├── astro.config.mjs
+└── package.json
+```
+
+```
+
+## License
+
+No license has been specified for this project yet. Contact the author for usage terms.
